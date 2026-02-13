@@ -6,7 +6,6 @@ export { UniqueTransaction } from "./components/UniqueTransaction";
 export { TransactionCards } from "./components/TransactionCards";
 export { Filter } from "./components/Filter";
 export { Modal } from "./components/Modal";
-export { Pagination } from "./components/Pagination";
 
 /* - Componentes Mobile - */
 

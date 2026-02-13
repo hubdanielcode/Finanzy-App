@@ -1,7 +1,7 @@
 import { UniqueTransaction } from "../UniqueTransaction";
 import { ExpenseOptions, IncomeOptions } from "../../model/TransactionOptions";
 import type { Transaction } from "../../model/TransactionTypes";
-import { Pagination } from "../Pagination";
+import { Pagination } from "../../../../shared/components/Pagination";
 import { useContext, useState } from "react";
 import { MobileFilter } from "./MobileFilter";
 import { TransactionContext } from "../../context/TransactionContext";

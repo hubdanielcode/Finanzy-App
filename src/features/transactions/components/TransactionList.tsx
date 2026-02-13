@@ -1,7 +1,7 @@
 import { UniqueTransaction } from "./UniqueTransaction";
 import { ExpenseOptions, IncomeOptions } from "../model/TransactionOptions";
 import type { Transaction } from "../model/TransactionTypes";
-import { Pagination } from "./Pagination";
+import { Pagination } from "../../../shared/components/Pagination";
 import { useContext, useState } from "react";
 import { TransactionContext } from "../context/TransactionContext";
 
@@ -71,17 +71,18 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
                 />
               ))}
           </ul>
-
-          <Pagination
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            totalPages={totalPages}
-            startIndex={startIndex}
-            endIndex={endIndex}
-            pages={pages}
-            itemsPerPage={itemsPerPage}
-            setItemsPerPage={setItemsPerPage}
-          />
+          {paginatedTransactions && totalPages >= 2 && (
+            <Pagination
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              totalPages={totalPages}
+              startIndex={startIndex}
+              endIndex={endIndex}
+              pages={pages}
+              itemsPerPage={itemsPerPage}
+              setItemsPerPage={setItemsPerPage}
+            />
+          )}
         </div>
       )}
 

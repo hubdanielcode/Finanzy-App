@@ -113,7 +113,7 @@ const RecoverPassword = () => {
         <div className="flex flex-col ml-2 text-white font-semibold text-sm">
           <Link
             className="text-white flex justify-center items-center text-sm hover:text-blue-400 hover:underline"
-            to="/login"
+            to="/"
           >
             Voltar para a tela de Login
           </Link>

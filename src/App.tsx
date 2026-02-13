@@ -20,7 +20,6 @@ interface AppLayoutProps {
 
 const AppLayout: React.FC<AppLayoutProps> = ({
   session,
-
   isMobileFormOpen,
   isMobileTransactionListOpen,
 }) => (
@@ -97,7 +96,7 @@ const App = () => {
       <TransactionProvider>
         <Routes>
           <Route
-            path="/login"
+            path="/"
             element={<Login />}
           />
 
@@ -105,7 +104,7 @@ const App = () => {
 
           <Route element={<ProtectedRoute session={session} />}>
             <Route
-              path="/homepage"
+              path="/dashboard"
               element={
                 <AppLayout
                   session={session}
@@ -145,7 +144,7 @@ const App = () => {
           {/* - Rota de cadastro - */}
 
           <Route
-            path="/cadastro"
+            path="/sign-up"
             element={<Authentication />}
           />
 

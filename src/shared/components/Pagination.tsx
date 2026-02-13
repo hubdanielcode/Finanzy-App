@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { TransactionContext } from "..";
-import { PageLimitOptions } from "../model/PaginationDropdownOptions";
+import { TransactionContext } from "../../features/transactions";
+import { PageLimitOptions } from "../../features/transactions/model/PaginationDropdownOptions";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface PaginationProps {

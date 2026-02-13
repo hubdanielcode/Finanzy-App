@@ -49,7 +49,7 @@ const Authentication = () => {
           first_name: firstName,
           last_name: lastName,
         },
-        emailRedirectTo: `${redirectUrl}/login`,
+        emailRedirectTo: `${redirectUrl}/`,
       },
     });
 
@@ -244,7 +244,7 @@ const Authentication = () => {
             Já possui cadastro?
             <Link
               className="text-white text-sm hover:text-blue-400 hover:underline"
-              to="/login"
+              to="/"
             >
               Faça Login!
             </Link>
