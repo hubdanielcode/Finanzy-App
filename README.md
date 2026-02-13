@@ -1,73 +1,199 @@
-# React + TypeScript + Vite
+# 💰 Finanzy App  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em React com TypeScript para gerenciamento financeiro pessoal, permitindo controle de receitas, despesas e organização de transações de forma simples e intuitiva.
 
-Currently, two official plugins are available:
+O sistema possibilita registrar entradas e saídas, visualizar saldo atualizado e acompanhar o histórico financeiro em uma interface moderna e responsiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto foi desenvolvido para ser parte do meu portfólio pessoal, com o objetivo de demonstrar minhas habilidades em desenvolvimento frontend, organização de código, autenticação de usuários e experiência do usuário. Pretendo atualizá-lo continuamente, adicionando novas funcionalidades e melhorias ao longo do tempo.
 
-## React Compiler
+🌐 Deploy realizado na Vercel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔐 Autenticação de usuários (login e registro) com Supabase  
+👤 Sessão persistente de usuário autenticado  
+💵 Cadastro de receitas e despesas  
+📋 Listagem completa de transações  
+🗑️ Remoção de transações  
+📊 Cálculo automático do saldo total  
+📈 Atualização dinâmica dos valores  
+🔄 Gerenciamento de estado em tempo real  
+⚠️ Validação de formulários  
+⏳ Feedback visual para ações do usuário  
+📱 Layout totalmente responsivo (desktop e mobile)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologias Utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+React (Vite)  
+TypeScript  
+CSS3  
+Supabase (Autenticação e Backend)  
+Vercel (Deploy e hospedagem)
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+Dashboard de Gestão Financeira/
+├── .git/
+├── node_modules/
+├── public/
+│   └── FinanzyLogo.png
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       └── mascote.png
+│   ├── features/
+│   │   ├── authentication/
+│   │   │   ├── components/
+│   │   │   │   ├── Authentication.tsx
+│   │   │   │   ├── Login.tsx
+│   │   │   │   ├── ProtectedRoute.tsx
+│   │   │   │   └── RecoverPassword.tsx
+│   │   │   └── index.ts
+│   │   └── transactions/
+│   │       ├── components/
+│   │       │   ├── mobile/
+│   │       │   │   ├── MobileActionBar.tsx
+│   │       │   │   ├── MobileFilter.tsx
+│   │       │   │   ├── MobileTransactionForm.tsx
+│   │       │   │   ├── MobileTransactionList.tsx
+│   │       │   │   └── MobileUniqueTransaction.tsx
+│   │       │   ├── Filter.tsx
+│   │       │   ├── Modal.tsx
+│   │       │   ├── Pagination.tsx
+│   │       │   ├── TransactionCards.tsx
+│   │       │   ├── TransactionForm.tsx
+│   │       │   ├── TransactionList.tsx
+│   │       │   └── UniqueTransaction.tsx
+│   │       ├── context/
+│   │       │   └── TransactionContext.tsx
+│   │       ├── model/
+│   │       │   ├── CategoryIcons.tsx
+│   │       │   ├── PaginationDropdownOptions.ts
+│   │       │   ├── TransactionOptions.ts
+│   │       │   └── TransactionTypes.ts
+│   │       ├── services/
+│   │       │   └── transactionService.ts
+│   │       └── utils/
+│   │           ├── formatPrivateCurrency.ts
+│   │           └── index.ts
+│   ├── shared/
+│   │   ├── components/
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── MainContent.tsx
+│   │   │   ├── Missing.tsx
+│   │   │   └── NewUserModal.tsx
+│   │   └── utils/
+│   │       └── index.ts
+│   ├── supabase/
+│   │   └── supabase.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .env
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── vercel.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔐 Autenticação
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+A aplicação utiliza o Supabase para:
+
+- Registro de novos usuários  
+- Login com e-mail e senha  
+- Gerenciamento de sessão  
+- Proteção de rotas privadas  
+
+---
+
+## 🌍 Deploy
+
+O projeto está publicado na Vercel, garantindo:
+
+- Deploy automático via GitHub  
+- Build otimizado para produção  
+- Ambiente seguro com variáveis de ambiente  
+
+---
+
+## ▶️ Como Executar o Projeto Localmente
+
+1️⃣ Clonar o repositório:
+
+```bash
+git clone https://github.com/hubdanielcode/Finanzy-App.git
 ```
+
+2️⃣ Acessar a pasta do projeto:
+
+```bash
+cd Dashboard\ de\ Gestão\ Financeira
+```
+
+3️⃣ Instalar as dependências:
+
+```bash
+npm install
+```
+
+4️⃣ Criar um arquivo `.env` e configurar as variáveis do Supabase:
+
+```
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+```
+
+5️⃣ Rodar a aplicação:
+
+```bash
+npm run dev
+```
+
+Acesse no navegador:
+
+```
+http://localhost:5173
+```
+
+---
+
+## ⚙️ Conceitos Aplicados
+
+Componentização  
+Gerenciamento de estado com Hooks  
+Autenticação JWT com Supabase  
+Proteção de rotas  
+Integração com Backend (BaaS)  
+Persistência de sessão  
+Boas práticas de organização de projeto  
+
+---
+
+## 📌 Observações
+
+Os dados financeiros são vinculados ao usuário autenticado.  
+Cada usuário visualiza apenas suas próprias transações.
+
+---
+
+## 📄 Licença
+
+Este projeto é livre para fins de estudo, aprendizado e uso pessoal.
