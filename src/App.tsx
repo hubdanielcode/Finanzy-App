@@ -142,7 +142,7 @@ const App = () => {
             </Route>
           </Route>
 
-          {/* - Rota de dadastro - */}
+          {/* - Rota de cadastro - */}
 
           <Route
             path="/cadastro"
