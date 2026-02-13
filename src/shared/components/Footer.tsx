@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({
           <span>App desenvolvido por</span>
           <strong>Daniel Lorenzo</strong>
           <LuDot className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
-          <span>v1.1.3</span>
+          <span>v1.1.5</span>
         </span>
       </div>
     </footer>
