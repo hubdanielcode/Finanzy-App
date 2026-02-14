@@ -29,13 +29,16 @@ const Filter: React.FC<FilterProps> = ({
   setPeriod,
   setCategory,
 }) => {
-  const handleClearFilters = () => {
+  const handleClearFilters: any = () => {
     setSearchQuery("");
+
     setSelectedPeriod("");
     setSelectedType("");
     setSelectedCategory("");
+
     setType(null);
     setPeriod(null);
+    setCategory("");
   };
 
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
@@ -165,7 +168,7 @@ const Filter: React.FC<FilterProps> = ({
               />
 
               {isTypeOpen && (
-                <ul className="absolute z-50 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg">
+                <ul className="absolute z-1 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg">
                   {TransactionTypeOptions.map((option) => (
                     <li
                       className="px-4 py-2 text-md text-gray-700 cursor-pointer hover:bg-blue-200 hover:text-blue-600 transition-colors"
@@ -206,7 +209,7 @@ const Filter: React.FC<FilterProps> = ({
               />
 
               {isCategoryOpen && (
-                <ul className="absolute z-50 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg max-h-72 overflow-y-auto">
+                <ul className="absolute z-1 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg max-h-72 overflow-y-auto">
                   {type !== "Saída" && (
                     <>
                       <span className="block px-4 py-2 text-md font-semibold tracking-wide text-white bg-black">
@@ -220,6 +223,8 @@ const Filter: React.FC<FilterProps> = ({
                             setSelectedCategory(option);
                             setCategory(option);
                             setIsCategoryOpen(false);
+                            setType("Entrada");
+                            setSelectedType("Entrada");
                           }}
                         >
                           {option}
@@ -241,6 +246,8 @@ const Filter: React.FC<FilterProps> = ({
                             setSelectedCategory(option);
                             setCategory(option);
                             setIsCategoryOpen(false);
+                            setType("Saída");
+                            setSelectedType("Saída");
                           }}
                         >
                           {option}

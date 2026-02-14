@@ -132,7 +132,7 @@ const MobileTransactionForm: React.FC<TransactionFormProps> = ({
   const todayString = formatTodayString();
 
   return (
-    <div className="fixed inset-0 z-10 sm:hidden bg-white">
+    <div className="fixed inset-0 z-1 sm:hidden bg-white">
       <form
         className="flex flex-col gap-4 h-full overflow-y-auto px-4 py-6 w-screen"
         ref={FormRef}
@@ -242,18 +242,23 @@ const MobileTransactionForm: React.FC<TransactionFormProps> = ({
               )}
             </ul>
           )}
-          <input
-            className="w-full px-4 py-2 rounded-lg border border-gray-500/50 bg-gray-100 disabled:opacity-60 disabled:cursor-not-allowed"
-            type="text"
-            value={selectedCategory}
-            readOnly
-            disabled={!formType}
-            placeholder={
-              formType ? "Selecione uma categoria" : "Selecione o tipo primeiro"
-            }
-            onClick={() => formType && setIsOpen(true)}
-            required
-          />
+
+          {!isOpen && (
+            <input
+              className="w-full px-4 py-2 rounded-lg border border-gray-500/50 bg-gray-100 disabled:opacity-60 disabled:cursor-not-allowed"
+              type="text"
+              value={selectedCategory}
+              readOnly
+              disabled={!formType}
+              placeholder={
+                formType
+                  ? "Selecione uma categoria"
+                  : "Selecione o tipo primeiro"
+              }
+              onClick={() => formType && setIsOpen(true)}
+              required
+            />
+          )}
         </div>
 
         {/* - Data - */}

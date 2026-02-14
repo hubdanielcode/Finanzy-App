@@ -24,6 +24,13 @@ const Authentication = () => {
   const createNewAccount = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
+    const nameRegex = /^(?!.*(.)\1{2,})[A-Za-zÀ-ÿ]+$/;
+
+    if (!nameRegex.test(firstName)) {
+      setSignUpError("Nome inválido.");
+      return;
+    }
+
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       setSignUpError("Preencha todos os campos.");
       return;
@@ -130,14 +137,7 @@ const Authentication = () => {
               placeholder="Primeiro Nome"
               type="text"
               value={firstName}
-              onChange={(e) => {
-                const value = e.target.value;
-                const regex = /^(?!.*(.)\1{2,})[A-Za-zÀ-ÿ]+$/;
-
-                if (regex.test(value)) {
-                  setFirstName(value);
-                }
-              }}
+              onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="flex items-center gap-3 h-12 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-4">
@@ -147,14 +147,7 @@ const Authentication = () => {
               placeholder="Último Nome"
               type="text"
               value={lastName}
-              onChange={(e) => {
-                const value = e.target.value;
-                const regex = /^(?!.*(.)\1{2,})[A-Za-zÀ-ÿ]+$/;
-
-                if (regex.test(value)) {
-                  setLastName(value);
-                }
-              }}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
 

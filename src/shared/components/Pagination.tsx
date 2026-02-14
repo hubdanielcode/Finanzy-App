@@ -1,5 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { TransactionContext } from "../../features/transactions";
+import { useEffect, useRef, useState } from "react";
 import { PageLimitOptions } from "../../features/transactions/model/PaginationDropdownOptions";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
@@ -18,20 +17,10 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   setCurrentPage,
   totalPages,
-  startIndex,
-  endIndex,
   pages,
   itemsPerPage,
   setItemsPerPage,
 }) => {
-  const context = useContext(TransactionContext);
-  if (!context) {
-    throw new Error(
-      "TransactionContext must be used within a TransactionProvider",
-    );
-  }
-  const { transactions } = context;
-
   const [isPageLimitDropdownOpen, setIsPageLimitDropdownOpen] = useState(false);
 
   const handleNextPage = () => {
@@ -72,11 +61,8 @@ const Pagination: React.FC<PaginationProps> = ({
     <div className="relative bg-white border border-gray-500/50 px-4 py-3 my-6 rounded-lg flex w-80 sm:w-202">
       <div className="flex flex-col gap-5">
         <p className="text-xs sm:text-sm text-black pt-3">
-          Mostrando
-          <span className="font-bold"> {startIndex + 1} - </span>
-          <span className="font-bold"> {endIndex} </span>
-          <span>de </span>
-          <span className="font-bold">{transactions.length}</span>
+          Mostrando Página <strong>{currentPage}</strong> de{" "}
+          <strong>{totalPages}</strong>
         </p>
 
         <div className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-import { formatCurrency } from "../../../shared/utils/formatCurrency";
+import { formatCurrency } from "./formatCurrency";
 
 const formatPrivateCurrency = (value: number, isPrivate: boolean) => {
   return isPrivate ? "R$ *****" : formatCurrency(value);

@@ -24,7 +24,7 @@ export const ExpenseOptions = [
   "Lazer",
   "Mercado",
   "Moradia",
-  "Outro",
+  "Outros",
   "Saúde",
   "Transporte",
 ];

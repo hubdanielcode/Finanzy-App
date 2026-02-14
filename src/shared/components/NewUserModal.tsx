@@ -61,7 +61,7 @@ const NewUserModal: React.FC<NewUserModalProps> = ({ session }) => {
   if (!isNewUserModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-1 flex items-center justify-center bg-black/40 backdrop-blur-xs">
+    <div className="fixed inset-0 z-3 flex items-center justify-center bg-black/40 backdrop-blur-xs">
       <div className="relative max-w-[80%] sm:max-w-[30%] min-h-[30%] sm:min-h-[45%] rounded-2xl bg-linear-to-br from-black/85 via-black/80 to-black/75 p-4 sm:p-8 shadow-lg sm:shadow-2xl">
         {/* - Logo - */}
 

@@ -256,19 +256,22 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
               ))}
             </ul>
           )}
-
-          <input
-            className="bg-gray-100 px-4 py-2 border border-gray-500/50 rounded-lg w-full disabled:opacity-60 outline-none"
-            type="text"
-            value={selectedCategory}
-            readOnly
-            disabled={!formType}
-            onClick={handleToggleDropDown}
-            placeholder={
-              formType ? "Selecione uma categoria" : "Selecione o tipo primeiro"
-            }
-            required
-          />
+          {!isOpen && (
+            <input
+              className="bg-gray-100 px-4 py-2 border border-gray-500/50 rounded-lg w-full disabled:opacity-60 outline-none"
+              type="text"
+              value={selectedCategory}
+              readOnly
+              disabled={!formType}
+              onClick={handleToggleDropDown}
+              placeholder={
+                formType
+                  ? "Selecione uma categoria"
+                  : "Selecione o tipo primeiro"
+              }
+              required
+            />
+          )}
         </div>
 
         {/* - Data - */}
@@ -287,7 +290,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
         </div>
 
         <button className="w-full bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white rounded-lg h-12 mb-3 cursor-pointer">
-          Submit
+          Enviar
         </button>
       </form>
     </div>

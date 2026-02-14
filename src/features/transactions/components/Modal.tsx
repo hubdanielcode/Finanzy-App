@@ -30,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="fixed flex inset-0 justify-center items-center bg-black/80 h-screen z-10 mx-auto">
+    <div className="fixed flex inset-0 justify-center items-center bg-black/80 h-screen z-1 mx-auto">
       <div className="flex flex-col bg-white h-fit w-150 rounded-xl border-gray-500/50 border pt-2 relative">
         {/* - Título geral - */}
 
@@ -55,7 +55,9 @@ const Modal: React.FC<ModalProps> = ({
             className="bg-gray-100 px-4 py-2 border-gray-500/50 border rounded-lg w-full text-md outline-none font-normal placeholder:font-normal text-gray-700"
             type="text"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
             maxLength={20}
           />
         </div>
@@ -71,13 +73,25 @@ const Modal: React.FC<ModalProps> = ({
             <input
               className="outline-none pl-2 font-normal placeholder:font-normal text-gray-700"
               type="text"
-              inputMode="decimal"
               pattern="[0-9]*[.,]?[0-9]{0,2}"
+              inputMode="decimal"
               value={amountInput}
               onChange={(e) => {
+                const value = e.target.value;
+
+                if (!/^[0-9.,]*$/.test(value)) {
+                  return;
+                }
+
+                if (value.includes("-")) {
+                  return;
+                }
+
+                setAmountInput(value);
+
                 const raw = e.target.value.replace(",", ".");
-                setAmountInput(e.target.value);
                 const parsed = parseFloat(raw);
+
                 setAmount(isNaN(parsed) ? 0 : parsed);
               }}
               placeholder="0,00"
@@ -88,35 +102,37 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Categoria da transação - */}
 
-        <div className="flex flex-col mb-6 px-10">
-          <label className="flex flex-col text-gray-700 font-semibold mb-2">
-            Categoria
-          </label>
+        <div className="flex flex-col mb-6 px-10 relative">
+          <label className="text-gray-700 font-semibold mb-2">Categoria</label>
+
           <input
-            className="bg-gray-100 px-4 py-2 border-gray-500/50 border rounded-lg w-full text-md outline-none font-normal placeholder:font-normal text-gray-700"
+            className="bg-gray-100 px-4 py-2 border border-gray-500/50 rounded-lg w-full text-md outline-none text-gray-700 cursor-pointer"
             type="text"
             value={category}
             placeholder="Selecione uma Categoria..."
             readOnly
             onClick={() => setIsOpen(!isOpen)}
           />
-          {isOpen &&
-            (type === "Entrada" ? IncomeOptions : ExpenseOptions).map(
-              (option) => (
-                <li
-                  key={option}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                  onClick={() => {
-                    setCategory(option);
-                    setIsOpen(false);
-                  }}
-                >
-                  {option}
-                </li>
-              ),
-            )}
-        </div>
 
+          {isOpen && (
+            <ul className="absolute top-full left-10 right-10 mt-1 max-h-40 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-lg z-1">
+              {(type === "Entrada" ? IncomeOptions : ExpenseOptions).map(
+                (option) => (
+                  <li
+                    key={option}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => {
+                      setCategory(option);
+                      setIsOpen(false);
+                    }}
+                  >
+                    {option}
+                  </li>
+                ),
+              )}
+            </ul>
+          )}
+        </div>
         {/* - Data da transação - */}
 
         <div className="flex flex-col mb-6 px-10">
@@ -137,9 +153,14 @@ const Modal: React.FC<ModalProps> = ({
         <div className="flex justify-around items-center mb-2 px-10">
           <button
             className="flex bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white border border-gray-500/50 py-2 px-4 rounded-lg cursor-pointer mb-2"
-            onClick={() =>
-              onSubmit({ ...transaction, title, amount, category, type, date })
-            }
+            onClick={() => {
+              if (!title.trim()) {
+                alert("O título não pode ser vazio");
+                return;
+              }
+
+              onSubmit({ ...transaction, title, amount, category, type, date });
+            }}
           >
             Salvar
           </button>
@@ -154,7 +175,7 @@ const Modal: React.FC<ModalProps> = ({
               setDate(transaction.date);
             }}
           >
-            Reset
+            Resetar
           </button>
         </div>
       </div>

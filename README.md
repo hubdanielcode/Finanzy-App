@@ -1,4 +1,4 @@
-# 💰 Finanzy App  
+# 💰 Finanzy App
 
 Aplicação web desenvolvida em React com TypeScript para gerenciamento financeiro pessoal, permitindo controle de receitas, despesas e organização de transações de forma simples e intuitiva.
 
@@ -80,9 +80,11 @@ Dashboard de Gestão Financeira/
 │   │       │   └── TransactionTypes.ts
 │   │       ├── services/
 │   │       │   └── transactionService.ts
-│   │       └── utils/
-│   │           ├── formatPrivateCurrency.ts
-│   │           └── index.ts
+│   │       ├── utils/
+│   │       │    ├── formatPrivateCurrency.ts
+│   │       │    └── formatCurrency.ts
+│   │       └── index.ts
+│   │
 │   ├── shared/
 │   │   ├── components/
 │   │   │   ├── Footer.tsx
@@ -90,8 +92,10 @@ Dashboard de Gestão Financeira/
 │   │   │   ├── MainContent.tsx
 │   │   │   ├── Missing.tsx
 │   │   │   └── NewUserModal.tsx
-│   │   └── utils/
-│   │       └── index.ts
+│   │   ├── utils/
+│   │   │    └── date.ts
+│   │   └── index.ts
+│   │
 │   ├── supabase/
 │   │   └── supabase.ts
 │   ├── App.tsx
@@ -117,10 +121,10 @@ Dashboard de Gestão Financeira/
 
 A aplicação utiliza o Supabase para:
 
-- Registro de novos usuários  
-- Login com e-mail e senha  
-- Gerenciamento de sessão  
-- Proteção de rotas privadas  
+- Registro de novos usuários
+- Login com e-mail e senha
+- Gerenciamento de sessão
+- Proteção de rotas privadas
 
 ---
 
@@ -128,9 +132,9 @@ A aplicação utiliza o Supabase para:
 
 O projeto está publicado na Vercel, garantindo:
 
-- Deploy automático via GitHub  
-- Build otimizado para produção  
-- Ambiente seguro com variáveis de ambiente  
+- Deploy automático via GitHub
+- Build otimizado para produção
+- Ambiente seguro com variáveis de ambiente
 
 ---
 
@@ -183,7 +187,7 @@ Autenticação JWT com Supabase
 Proteção de rotas  
 Integração com Backend (BaaS)  
 Persistência de sessão  
-Boas práticas de organização de projeto  
+Boas práticas de organização de projeto
 
 ---
 

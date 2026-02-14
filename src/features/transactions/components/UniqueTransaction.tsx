@@ -46,21 +46,30 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
       ? IncomeIcons[transaction.category as keyof typeof IncomeIcons]?.icon
       : ExpenseIcons[transaction.category as keyof typeof ExpenseIcons]?.icon;
 
+  // Formatação segura para valores muito grandes
+  const formattedAmount =
+    transaction.amount > 1e12
+      ? transaction.amount.toExponential(2)
+      : transaction.amount.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+
   return (
     <div>
-      <h1 className="text-gray-600/70 font-bold text-sm sm:text-lg mb pl-4">
+      <h1 className="text-gray-600/70 font-bold text-[clamp(0.875rem,1vw,1.5rem)] mb pl-4">
         {formattedDate}
       </h1>
 
       <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 sm:w-202 w-80">
-        <div className=" hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50">
+        <div className="hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50">
           {categoryIcon}
         </div>
 
-        <div className="flex flex-col text-gray-700 font-bold text-sm sm:text-md ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
+        <div className="flex flex-col text-gray-700 font-bold text-[clamp(1rem,1vw,1.25rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
           {transaction.title}
 
-          <div className="flex text-sm sm:text-md text-gray-600/70 font-semibold mt-2">
+          <div className="flex text-[clamp(0.75rem,0.8vw,1rem)] text-gray-600/70 font-semibold mt-2">
             <span>{transaction.category} </span>
             <LuDot className="hidden sm:inline sm:h-5 sm:w-5" />
             <span className="hidden sm:inline"> {anotherFormattedDate} </span>
@@ -69,15 +78,12 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
         <div className="flex flex-col ml-auto mr-10 sm:mr-35 items-end">
           <div
-            className={`sm:text-2xl text-sm font-bold sm:mb-3 ${
+            className={`text-[clamp(1rem,0.8vw,1.5rem)] font-bold sm:mb-3 max-w-40 truncate ${
               transaction.type === "Entrada" ? "text-green-600" : "text-red-600"
             }`}
           >
             {transaction.type === "Entrada" ? "+" : "-"}
-            {transaction.amount.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
+            {formattedAmount}
           </div>
 
           <span
