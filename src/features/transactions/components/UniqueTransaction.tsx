@@ -46,7 +46,6 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
       ? IncomeIcons[transaction.category as keyof typeof IncomeIcons]?.icon
       : ExpenseIcons[transaction.category as keyof typeof ExpenseIcons]?.icon;
 
-  // Formatação segura para valores muito grandes
   const formattedAmount =
     transaction.amount > 1e12
       ? transaction.amount.toExponential(2)
@@ -57,7 +56,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
   return (
     <div>
-      <h1 className="text-gray-600/70 font-bold text-[clamp(0.875rem,1vw,1.5rem)] mb pl-4">
+      <h1 className="text-gray-600/70 font-bold text-[clamp(1rem,1vw,1.25rem)] mb pl-4">
         {formattedDate}
       </h1>
 
@@ -69,7 +68,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
         <div className="flex flex-col text-gray-700 font-bold text-[clamp(1rem,1vw,1.25rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
           {transaction.title}
 
-          <div className="flex text-[clamp(0.75rem,0.8vw,1rem)] text-gray-600/70 font-semibold mt-2">
+          <div className="flex text-[clamp(1rem,1vw,1.25rem)] text-gray-600/70 font-semibold mt-2">
             <span>{transaction.category} </span>
             <LuDot className="hidden sm:inline sm:h-5 sm:w-5" />
             <span className="hidden sm:inline"> {anotherFormattedDate} </span>
@@ -78,7 +77,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
         <div className="flex flex-col ml-auto mr-10 sm:mr-35 items-end">
           <div
-            className={`text-[clamp(1rem,0.8vw,1.5rem)] font-bold sm:mb-3 max-w-40 truncate ${
+            className={`text-[clamp(1rem,1vw,1.25rem)] font-bold sm:mb-3 max-w-40 truncate ${
               transaction.type === "Entrada" ? "text-green-600" : "text-red-600"
             }`}
           >

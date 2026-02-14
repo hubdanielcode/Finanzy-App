@@ -47,7 +47,7 @@ const MobileUniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
   return (
     <div>
-      <h1 className="text-gray-600/70 font-bold text-lg mb pl-4">
+      <h1 className="text-gray-600/70 font-bold text-[clamp(0.875rem,1vw,1.5rem)] mb pl-4">
         {formattedDate}
       </h1>
 
@@ -58,7 +58,7 @@ const MobileUniqueTransaction: React.FC<UniqueTransactionProps> = ({
         <div className="flex flex-col text-gray-700 font-bold text-md ml-4 px-4 py-2">
           {transaction.title}
 
-          <div className="flex text-md text-gray-600/70 font-semibold mt-2">
+          <div className="flex text-[clamp(0.75rem,0.8vw,1rem)]  text-gray-600/70 font-semibold mt-2">
             {transaction.category}
             <LuDot size={25} />
             {anotherFormattedDate}
@@ -66,7 +66,7 @@ const MobileUniqueTransaction: React.FC<UniqueTransactionProps> = ({
         </div>
         <div className="flex flex-col mr-10 mx-auto">
           <div
-            className={`text-2xl font-bold mb-3 ${
+            className={`text-[clamp(1rem,0.8vw,1.5rem)] font-bold mb-3 ${
               transaction.type === "Entrada" ? "text-green-600" : "text-red-600"
             }`}
           >
