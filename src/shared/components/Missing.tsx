@@ -15,7 +15,7 @@ const Missing: React.FC = () => {
 
         <Link
           className="mt-8 px-4 py-2 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-full text-white font-semibold text-sm transition"
-          to="/login"
+          to="/"
         >
           Voltar para a tela de Login
         </Link>

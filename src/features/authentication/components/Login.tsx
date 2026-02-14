@@ -41,7 +41,7 @@ const Login = () => {
       return;
     }
 
-    navigate("/homepage", { replace: true });
+    navigate("/dashboard", { replace: true });
   };
 
   const signInRef = useRef<HTMLButtonElement | null>(null);
@@ -156,7 +156,7 @@ const Login = () => {
             Não possui cadastro?
             <Link
               className="text-white text-sm hover:text-blue-400 hover:underline"
-              to="/cadastro"
+              to="/sign-up"
             >
               Clique Aqui
             </Link>
