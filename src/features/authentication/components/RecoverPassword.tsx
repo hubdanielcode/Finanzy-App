@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../../../supabase/supabase";
 import { MdAlternateEmail } from "react-icons/md";
+import FinanzyLogo from "../../../../public/FinanzyLogo.png";
 import { Link } from "react-router-dom";
 
 const RecoverPassword = () => {
@@ -53,19 +54,20 @@ const RecoverPassword = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 px-4">
-      <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 pt-14 pb-8">
+      <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 py-8 landscape:py-5 m-4">
         {/* Logo */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="w-16 h-16 rounded-full bg-black/40 border border-gray-500/50 shadow-xl flex items-center justify-center">
+
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[40%]">
+          <div className="w-16 h-16 landscape:w-12 landscape:h-12 rounded-full flex items-center justify-center shadow-xl border border-gray-500/50">
             <img
-              src="/FinanzyLogo.png"
-              alt="Finanzy Logo"
               className="w-full h-full object-cover rounded-full"
+              src={FinanzyLogo}
+              alt="Logo"
             />
           </div>
         </div>
 
-        <h1 className="mb-3 text-center text-xl sm:text-2xl font-bold text-white">
+        <h1 className="mt-12 mb-8 landscape:mt-8 landscape:mb-4 text-center text-xl sm:text-2xl font-bold text-white">
           Recupere sua senha
         </h1>
 
