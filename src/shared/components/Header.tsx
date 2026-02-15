@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   const [isPrivate, setIsPrivate] = useState(false);
 
   return (
-    <header className="w-full py-6 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600">
+    <header className="w-7xl sm:w-full py-6 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4">
           {/* - Logo + título - */}
