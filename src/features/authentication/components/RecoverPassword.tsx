@@ -53,7 +53,7 @@ const RecoverPassword = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 px-4">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center landscape:justify-start bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 px-4 py-6 overflow-y-auto">
       <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 py-8 landscape:py-5 m-4">
         {/* Logo */}
 
