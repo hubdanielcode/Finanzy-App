@@ -47,7 +47,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
       : ExpenseIcons[transaction.category as keyof typeof ExpenseIcons]?.icon;
 
   const formattedAmount =
-    transaction.amount > 1e12
+    transaction.amount > 1e9
       ? transaction.amount.toExponential(2)
       : transaction.amount.toLocaleString("pt-BR", {
           style: "currency",
@@ -56,28 +56,28 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
   return (
     <div>
-      <h1 className="text-gray-600/70 font-bold text-[clamp(1rem,1vw,1.25rem)] mb pl-4">
+      <h1 className="text-gray-600/70 font-bold text-[clamp(0.8rem,1.1vw,1rem)] mb pl-4">
         {formattedDate}
       </h1>
 
-      <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 sm:w-202 w-80">
+      <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 w-full sm:max-w-3xl">
         <div className="hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50">
           {categoryIcon}
         </div>
 
-        <div className="flex flex-col text-gray-700 font-bold text-[clamp(1rem,1vw,1.25rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
+        <div className="flex flex-col text-gray-700 font-bold text-[clamp(0.8rem,1.1vw,1rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
           {transaction.title}
 
-          <div className="flex text-[clamp(1rem,1vw,1.25rem)] text-gray-600/70 font-semibold mt-2">
+          <div className="flex text-sm text-gray-600/70 font-semibold mt-2">
             <span>{transaction.category} </span>
             <LuDot className="hidden sm:inline sm:h-5 sm:w-5" />
             <span className="hidden sm:inline"> {anotherFormattedDate} </span>
           </div>
         </div>
 
-        <div className="flex flex-col ml-auto mr-10 sm:mr-35 items-end">
+        <div className="flex flex-col ml-auto px-4 sm:px-6 lg:px-8 sm:mr-35 items-end">
           <div
-            className={`text-[clamp(1rem,1vw,1.25rem)] font-bold sm:mb-3 max-w-40 truncate ${
+            className={`text-[clamp(0.8rem,1.1vw,1rem)] font-bold sm:mb-3 max-w-40 truncate ${
               transaction.type === "Entrada" ? "text-green-600" : "text-red-600"
             }`}
           >

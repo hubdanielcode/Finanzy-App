@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({
             onChange={(e) => {
               setTitle(e.target.value);
             }}
-            maxLength={20}
+            maxLength={30}
           />
         </div>
 
@@ -133,6 +133,7 @@ const Modal: React.FC<ModalProps> = ({
             </ul>
           )}
         </div>
+
         {/* - Data da transação - */}
 
         <div className="flex flex-col mb-6 px-10">

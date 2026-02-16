@@ -114,7 +114,7 @@ const MainContent: React.FC<MainContentProps> = ({
   }, [isMobileFormOpen, isMobileTransactionListOpen]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="w-full flex flex-1 flex-col">
       <main className="flex-1">
         <MobileActionBar
           OpenForm={() => setIsMobileFormOpen(true)}

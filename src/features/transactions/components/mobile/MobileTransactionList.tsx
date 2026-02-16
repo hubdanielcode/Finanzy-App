@@ -80,7 +80,7 @@ const MobileTransactionList: React.FC<TransactionListProps> = ({
         setIsMobileTransactionListOpen={setIsMobileTransactionListOpen}
       />
 
-      <div className="flex flex-col sm:hidden pl-8 bg-gray-100 h-screen">
+      <div className="flex flex-col sm:hidden pl-8 bg-gray-100 min-h-screen">
         <div className="flex sm:my-4 pb-2">
           <h1 className="text-xl sm:text-2xl text-black font-bold mx-auto pt-3">
             Histórico de Transações

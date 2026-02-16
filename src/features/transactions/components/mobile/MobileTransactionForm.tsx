@@ -280,7 +280,7 @@ const MobileTransactionForm: React.FC<TransactionFormProps> = ({
           className="w-full bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white py-2 rounded-lg"
           type="submit"
         >
-          Submit
+          Enviar
         </button>
       </form>
     </div>

@@ -24,13 +24,15 @@ const AppLayout: React.FC<AppLayoutProps> = ({
   isMobileTransactionListOpen,
 }) => (
   <>
-    <Header />
-    <NewUserModal session={session} />
-    <Outlet />
-    <Footer
-      isMobileFormOpen={isMobileFormOpen}
-      isMobileTransactionListOpen={isMobileTransactionListOpen}
-    />
+    <div className="flex flex-col min-w-fit min-h-screen">
+      <Header />
+      <NewUserModal session={session} />
+      <Outlet />
+      <Footer
+        isMobileFormOpen={isMobileFormOpen}
+        isMobileTransactionListOpen={isMobileTransactionListOpen}
+      />
+    </div>
   </>
 );
 
@@ -92,7 +94,7 @@ const App = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen mx-auto flex flex-col select-none scroll-smooth">
+    <div className="bg-gray-100 h-screen w-full flex flex-col select-none scroll-smooth">
       <TransactionProvider>
         <Routes>
           <Route

@@ -113,7 +113,7 @@ const Authentication = () => {
       <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 py-8 landscape:py-5 m-4">
         {/* - Logo - */}
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[40%]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[50%]">
           <div className="w-16 h-16 landscape:w-12 landscape:h-12 rounded-full flex items-center justify-center shadow-xl border border-gray-500/50">
             <img
               className="w-full h-full object-cover rounded-full"
@@ -230,9 +230,9 @@ const Authentication = () => {
 
         {/* - Erro - */}
 
-        <div className="h-14 w-full text-center text-md">
+        <div className="min-h-18 py-3">
           {signUpError && (
-            <p className="flex justify-center items-center mt-5 w-full h-12 landscape:h-10 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 py-2 text-center">
+            <p className="flex items-center justify-center h-12 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 text-center">
               {signUpError}
             </p>
           )}

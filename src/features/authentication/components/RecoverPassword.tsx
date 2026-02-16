@@ -55,9 +55,9 @@ const RecoverPassword = () => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center landscape:justify-start bg-linear-to-br from-blue-600 via-indigo-600 to-purple-600 px-4 py-6 overflow-y-auto">
       <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 py-8 landscape:py-5 m-4">
-        {/* Logo */}
+        {/* - Logo - */}
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[40%]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[50%]">
           <div className="w-16 h-16 landscape:w-12 landscape:h-12 rounded-full flex items-center justify-center shadow-xl border border-gray-500/50">
             <img
               className="w-full h-full object-cover rounded-full"
@@ -76,7 +76,8 @@ const RecoverPassword = () => {
           senha
         </p>
 
-        {/* Email input */}
+        {/* - Email input - */}
+
         <div className="flex items-center gap-3 h-12 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-4">
           <MdAlternateEmail className="text-blue-600 text-lg" />
           <input
@@ -91,17 +92,18 @@ const RecoverPassword = () => {
         <button
           ref={buttonRef}
           onClick={handleResetPassword}
-          className="w-full h-12 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 transition"
+          className="mt-4 w-full h-12 landscape:h-10 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 transition cursor-pointer"
         >
           Enviar Email
         </button>
 
-        {errorMessage && (
-          <p className="mt-4 flex items-center justify-center h-12 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 text-center">
-            {errorMessage}
-          </p>
-        )}
-
+        <div className="min-h-18 py-3">
+          {errorMessage && (
+            <p className="flex items-center justify-center h-12 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 text-center">
+              {errorMessage}
+            </p>
+          )}
+        </div>
         <div className="mt-4 text-center text-sm font-semibold text-white">
           <Link
             to="/"

@@ -41,7 +41,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
   const paginatedTransactions = sortedTransactions.slice(startIndex, endIndex);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <div className="flex my-4">
         <h1 className="text-2xl text-black font-bold mx-auto pt-3">
           Histórico de Transações

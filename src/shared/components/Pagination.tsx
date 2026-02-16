@@ -58,10 +58,10 @@ const Pagination: React.FC<PaginationProps> = ({
     };
   }, [isPageLimitDropdownOpen]);
   return (
-    <div className="relative bg-white border border-gray-500/50 px-4 py-3 my-6 rounded-lg flex w-80 sm:w-202">
+    <div className="relative bg-white border border-gray-500/50 px-4 py-3 my-6 rounded-xl flex w-full sm:max-w-3xl">
       <div className="flex flex-col gap-5">
         <p className="text-xs sm:text-sm text-black pt-3">
-          Mostrando Página <strong>{currentPage}</strong> de{" "}
+          Mostrando Página <strong>{currentPage}</strong> de {""}
           <strong>{totalPages}</strong>
         </p>
 
@@ -78,7 +78,9 @@ const Pagination: React.FC<PaginationProps> = ({
           >
             <div
               className={`absolute left-0 top-0 flex items-center overflow-x-hidden border border-gray-500/50 rounded-lg bg-gray-100 cursor-pointer transition-all duration-300 ease-in-out text-gray-700 ${isPageLimitDropdownOpen ? " w-fit shadow-lg z-1" : " w-fit shadow-sm z-1"}`}
-              onClick={() => setIsPageLimitDropdownOpen((prev) => !prev)}
+              onClick={() => {
+                setIsPageLimitDropdownOpen((prev) => !prev);
+              }}
             >
               {PageLimitOptions.filter(
                 (option) => isPageLimitDropdownOpen || option === itemsPerPage,
@@ -91,6 +93,7 @@ const Pagination: React.FC<PaginationProps> = ({
                     e.stopPropagation();
                     setItemsPerPage(option);
                     setIsPageLimitDropdownOpen(false);
+                    setCurrentPage(1);
                   }}
                 >
                   {option}

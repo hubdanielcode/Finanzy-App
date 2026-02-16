@@ -135,7 +135,8 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
   return (
     <div>
       <form
-        className="hidden sm:block mx-auto bg-white border border-gray-500/50 rounded-xl text-black max-w-7xl my-8 py-2 px-8 w-99 sticky top-6"
+        className="hidden sm:block mx-auto bg-white border border-gray-500/50 rounded-xl text-black max-w-7xl mt-8 mb-7 py-2 w-full sm:max-w-2xl lg:max-w-4xl
+ px-8 sticky top-6"
         ref={TypeRef}
         onSubmit={handleSubmit}
       >
@@ -158,7 +159,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Ex: Salário, Aluguel, Supermercado..."
-            maxLength={20}
+            maxLength={30}
             required
           />
         </div>

@@ -62,7 +62,7 @@ const Login = () => {
       <div className="relative w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-sm border border-gray-500/50 shadow-2xl px-6 py-8 landscape:py-5 m-4">
         {/* - Logo - */}
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[40%]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[60%] landscape:-translate-y-[50%]">
           <div className="w-16 h-16 landscape:w-12 landscape:h-12 rounded-full flex items-center justify-center shadow-xl border border-gray-500/50">
             <img
               className="w-full h-full object-cover rounded-full"
@@ -76,9 +76,7 @@ const Login = () => {
           Entrar
         </h1>
 
-        {/* - Inputs - */}
-
-        {/* - Email - */}
+        {/* - Email input - */}
 
         <div className="flex items-center gap-3 h-12 landscape:h-10 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-4">
           <MdAlternateEmail className="text-blue-600 text-lg" />
@@ -91,7 +89,7 @@ const Login = () => {
           />
         </div>
 
-        {/* - Senha - */}
+        {/* - Senha input - */}
 
         <div className="flex items-center gap-3 h-12 landscape:h-10 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-2">
           <RiLockPasswordFill className="text-blue-600 text-lg" />
@@ -119,7 +117,7 @@ const Login = () => {
 
         <div className="flex justify-center items-center mb-4 text-white font-semibold text-sm">
           <Link
-            className="hover:text-blue-400 hover:underline"
+            className="hover:text-blue-400 hover:underline mt-3"
             to="/recover-password"
           >
             Esqueci minha senha
@@ -138,9 +136,9 @@ const Login = () => {
 
         {/* - Erro - */}
 
-        <div className="h-14 w-full text-center text-md">
+        <div className="min-h-18 py-3">
           {signInError && (
-            <p className="flex justify-center items-center mt-5 w-full h-12 landscape:h-10 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 py-2 text-center">
+            <p className="flex items-center justify-center h-12 rounded-xl bg-red-100 border border-red-300 text-red-700 text-sm font-semibold px-4 text-center">
               {signInError}
             </p>
           )}

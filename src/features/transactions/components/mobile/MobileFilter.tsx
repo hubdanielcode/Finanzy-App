@@ -67,10 +67,10 @@ const MobileFilter: React.FC<FilterProps> = ({
 
   return (
     <>
-      <div className="flex items-center gap-3 mb-4 mt-6 bg-white">
+      <div className="flex items-center gap-3 mb-4 mt-6 bg-white w-full">
         <Funnel className="bg-blue-100 h-8 w-8 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white p-1.5 ml-4" />
         <h1 className="font-bold text-2xl text-black bg-white">
-          Nova Transação
+          Filtrar Transações
         </h1>
         <button
           className="absolute right-4 top-6 bg-black h-8 w-8 rounded-xl flex items-center justify-center text-white"
@@ -250,7 +250,7 @@ const MobileFilter: React.FC<FilterProps> = ({
 
         {/* - Footer - */}
 
-        <div className="flex py-4 border-b w-screen border-gray-500/50">
+        <div className="flex p-4 border-b w-screen border-gray-500/50">
           <button
             onClick={clearFilters}
             className="flex items-center gap-2 font-semibold text-gray-600 hover:text-black"

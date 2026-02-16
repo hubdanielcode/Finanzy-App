@@ -74,7 +74,7 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <>
-      <div className="flex flex-col mt-8 mb-4 px-8 mr-10 bg-white w-202 h-fit rounded-xl text-md border border-gray-500/50 mx-auto">
+      <div className="flex flex-col mt-8 mb-4 px-4 sm:px-6 lg:px-8 bg-white w-full h-fit rounded-xl text-md border border-gray-500/50 mx-auto">
         {/* - Searchbar - */}
 
         <div className="flex items-center gap-3 h-20 mt-6">
