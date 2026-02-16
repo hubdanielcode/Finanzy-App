@@ -13,7 +13,6 @@ export { MobileActionBar } from "./components/mobile/MobileActionBar";
 export { MobileFilter } from "./components/mobile/MobileFilter";
 export { MobileTransactionList } from "./components/mobile/MobileTransactionList";
 export { MobileTransactionForm } from "./components/mobile/MobileTransactionForm";
-export { MobileUniqueTransaction } from "./components/mobile/MobileUniqueTransaction";
 
 /* - Context - */
 

@@ -121,7 +121,7 @@ const MainContent: React.FC<MainContentProps> = ({
           OpenTransactionList={() => setIsMobileTransactionListOpen(true)}
         />
 
-        <div className="flex gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-1 gap-4 max-w-2xl sm:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TransactionForm
             title={title}
             setTitle={setTitle}

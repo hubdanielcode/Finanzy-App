@@ -60,12 +60,12 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
         {formattedDate}
       </h1>
 
-      <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 w-full sm:max-w-3xl">
+      <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 w-87 sm:w-full sm:max-w-3xl">
         <div className="hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50">
           {categoryIcon}
         </div>
 
-        <div className="flex flex-col text-gray-700 font-bold text-[clamp(0.8rem,1.1vw,1rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py">
+        <div className="flex flex-col text-gray-700 font-bold text-[clamp(0.8rem,1.1vw,1rem)] ml-2 sm:ml-4 sm:px-4 px-2 sm:py-2 py-1">
           {transaction.title}
 
           <div className="flex text-sm text-gray-600/70 font-semibold mt-2">
@@ -77,7 +77,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
         <div className="flex flex-col ml-auto px-4 sm:px-6 lg:px-8 sm:mr-35 items-end">
           <div
-            className={`text-[clamp(0.8rem,1.1vw,1rem)] font-bold sm:mb-3 max-w-40 truncate ${
+            className={`text-[clamp(0.8rem,1.1vw,1rem)] font-bold sm:mb-3 mr-15 sm:mr-0 max-w-40 truncate ${
               transaction.type === "Entrada" ? "text-green-600" : "text-red-600"
             }`}
           >
@@ -86,7 +86,7 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
           </div>
 
           <span
-            className={`sm:text-sm text-xs border rounded-full py px-2 font-bold w-fit ml-auto ${
+            className={`sm:text-sm text-xs border rounded-full px-2 font-bold w-fit mr-15 sm:mr-0 ${
               transaction.type === "Entrada"
                 ? "border-green-600 bg-green-200 hover:border-green-800 hover:bg-green-300 text-green-600"
                 : "border-red-600 bg-red-200 hover:border-red-800 hover:bg-red-300 text-red-600"
@@ -98,11 +98,11 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
         <div className="absolute top-3 right-3 flex sm:flex-row flex-col gap-4 sm:m-4">
           <FaPenAlt
-            className="sm:h-10 sm:w-10 h-7 w-5 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-blue-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            className="sm:h-10 sm:w-10 h-7 w-5 mr-3 sm:mr-0 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-blue-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
             onClick={() => setIsModalOpen(true)}
           />
           <FaTrashAlt
-            className="sm:h-10 sm:w-10 h-7 w-5 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-red-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            className="sm:h-10 sm:w-10 h-7 w-5 mr-3 sm:mr-0 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-red-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
             onClick={() => handleDeleteTransaction(transaction.id!)}
           />
         </div>
