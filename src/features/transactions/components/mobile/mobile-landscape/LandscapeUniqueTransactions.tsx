@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { TransactionContext } from "../../../context/TransactionContext";
 import { Modal } from "../../Modal";
 import { ExpenseIcons, IncomeIcons } from "../../../model/CategoryIcons";
+import { LuDot } from "react-icons/lu";
 
 interface UniqueTransactionProps {
   transaction: Transaction;
@@ -31,6 +32,8 @@ const LandscapeUniqueTransaction: React.FC<UniqueTransactionProps> = ({
     "EEEE, dd 'de' MMMM 'de' yyyy",
     { locale: ptBR },
   ).toUpperCase();
+
+  const anotherFormattedDate = format(transactionDate, "dd/MM/yyyy");
 
   const handleUpdate = (updated: Transaction) => {
     handleUpdateTransaction(updated);
@@ -58,6 +61,8 @@ const LandscapeUniqueTransaction: React.FC<UniqueTransactionProps> = ({
 
           <div className="flex text-sm text-gray-600/70 font-semibold mt-2">
             <span>{transaction.category} </span>
+            <LuDot className="inline h-5 w-5" />
+            <span> {anotherFormattedDate} </span>
           </div>
         </div>
 
