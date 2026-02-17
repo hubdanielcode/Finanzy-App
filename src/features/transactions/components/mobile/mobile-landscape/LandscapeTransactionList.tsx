@@ -1,15 +1,20 @@
-import { UniqueTransaction } from "./UniqueTransaction";
-import { ExpenseOptions, IncomeOptions } from "../model/TransactionOptions";
-import type { Transaction } from "../model/TransactionTypes";
-import { Pagination } from "../../../shared/components/Pagination";
+import {
+  ExpenseOptions,
+  IncomeOptions,
+} from "../../../model/TransactionOptions";
+import type { Transaction } from "../../../model/TransactionTypes";
+import { Pagination } from "../../../../../shared";
 import { useContext, useState } from "react";
-import { TransactionContext } from "../context/TransactionContext";
+import { TransactionContext } from "../../../context/TransactionContext";
+import { LandscapeUniqueTransaction } from "./LandscapeUniqueTransactions";
 
 interface TransactionListProps {
   transactions: Transaction[];
 }
 
-const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
+const LandscapeTransactionList: React.FC<TransactionListProps> = ({
+  transactions,
+}) => {
   const context = useContext(TransactionContext);
   if (!context) {
     throw new Error(
@@ -41,7 +46,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
   const paginatedTransactions = sortedTransactions.slice(startIndex, endIndex);
 
   return (
-    <div className="flex flex-col w-z">
+    <div className="flex flex-col w-md">
       <div className="flex my-4">
         <h1 className="text-2xl text-black font-bold mx-auto pt-3">
           Histórico de Transações
@@ -63,7 +68,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
                   transaction.id !== null && transaction.id !== undefined,
               )
               .map((transaction) => (
-                <UniqueTransaction
+                <LandscapeUniqueTransaction
                   key={transaction.id}
                   transaction={transaction}
                   ExpenseOptions={ExpenseOptions}
@@ -94,4 +99,4 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
   );
 };
 
-export { TransactionList };
+export { LandscapeTransactionList };

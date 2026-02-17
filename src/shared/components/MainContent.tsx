@@ -1,5 +1,4 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-
 import {
   TransactionContext,
   TransactionForm,
@@ -8,32 +7,28 @@ import {
   MobileTransactionForm,
   MobileTransactionList,
   MobileActionBar,
+  LandscapeTransactionForm,
+  LandscapeTransactionList,
 } from "../../features/transactions";
+import { useIsMobileDevice, useOrientation } from "../../features/transactions";
 
 export interface MainContentProps {
   title: string;
   setTitle: (title: string) => void;
-
   amount: string;
   setAmount: (amount: string) => void;
-
   date: string;
   setDate: (date: string) => void;
-
   type: "Entrada" | "Saída" | null;
   setType: (type: "Entrada" | "Saída" | null) => void;
-
   category: string;
   setCategory: (category: string) => void;
-
   isMobileFormOpen: boolean;
   setIsMobileFormOpen: (isMobileFormOpen: boolean) => void;
-
   isMobileTransactionListOpen: boolean;
   setIsMobileTransactionListOpen: (
     isMobileTransactionListOpen: boolean,
   ) => void;
-
   period:
     | "Hoje"
     | "Última Semana"
@@ -67,6 +62,7 @@ const MainContent: React.FC<MainContentProps> = ({
   setIsMobileTransactionListOpen,
 }) => {
   const context = useContext(TransactionContext);
+
   if (!context) {
     throw new Error(
       "TransactionContext must be used within a TransactionProvider.",
@@ -74,30 +70,27 @@ const MainContent: React.FC<MainContentProps> = ({
   }
 
   const { transactions } = context;
-
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTransactions = useMemo(() => {
     let result = [...transactions];
 
     if (searchQuery.trim()) {
-      result = result.filter((transaction) =>
-        transaction.title.toLowerCase().includes(searchQuery.toLowerCase()),
+      result = result.filter((t) =>
+        t.title.toLowerCase().includes(searchQuery.toLowerCase()),
       );
     }
 
     if (type) {
-      result = result.filter((transaction) => transaction.type === type);
+      result = result.filter((t) => t.type === type);
     }
 
     if (period) {
-      result = result.filter((transaction) => transaction.period === period);
+      result = result.filter((t) => t.period === period);
     }
 
     if (category) {
-      result = result.filter(
-        (transaction) => transaction.category === category,
-      );
+      result = result.filter((t) => t.category === category);
     }
 
     return result;
@@ -105,13 +98,19 @@ const MainContent: React.FC<MainContentProps> = ({
 
   useEffect(() => {
     const shouldBlockScroll = isMobileFormOpen || isMobileTransactionListOpen;
-
     document.body.style.overflow = shouldBlockScroll ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isMobileFormOpen, isMobileTransactionListOpen]);
+
+  {
+    /* - Hooks - */
+  }
+  const isMobileDevice = useIsMobileDevice();
+  const isLandscape = useOrientation();
+  const isMobileLandscape = isMobileDevice && isLandscape;
 
   return (
     <div className="w-full flex flex-1 flex-col">
@@ -121,17 +120,36 @@ const MainContent: React.FC<MainContentProps> = ({
           OpenTransactionList={() => setIsMobileTransactionListOpen(true)}
         />
 
-        <div className="flex flex-1 gap-4 max-w-2xl sm:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <TransactionForm
-            title={title}
-            setTitle={setTitle}
-            amount={amount}
-            setAmount={setAmount}
-            date={date}
-            setDate={setDate}
-          />
+        <div className="flex w-full flex-1 gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* - Renderiza o LandscapeTransactionForm quando mobile landscape - */}
 
-          <div className="hidden sm:flex sm:flex-col sm:flex-1 bg-gray-100">
+          {isMobileLandscape ? (
+            <LandscapeTransactionForm
+              title={title}
+              setTitle={setTitle}
+              amount={amount}
+              setAmount={setAmount}
+              date={date}
+              setDate={setDate}
+            />
+          ) : (
+            <TransactionForm
+              title={title}
+              setTitle={setTitle}
+              amount={amount}
+              setAmount={setAmount}
+              date={date}
+              setDate={setDate}
+            />
+          )}
+
+          <div
+            className={`${
+              isMobileLandscape
+                ? "flex flex-col flex-1"
+                : "hidden sm:flex sm:flex-col sm:flex-1"
+            } bg-gray-100`}
+          >
             <Filter
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
@@ -144,7 +162,11 @@ const MainContent: React.FC<MainContentProps> = ({
               setCategory={setCategory}
             />
 
-            <TransactionList transactions={filteredTransactions} />
+            {isMobileLandscape ? (
+              <LandscapeTransactionList transactions={filteredTransactions} />
+            ) : (
+              <TransactionList transactions={filteredTransactions} />
+            )}
           </div>
         </div>
 

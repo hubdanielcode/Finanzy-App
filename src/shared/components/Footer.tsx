@@ -16,8 +16,8 @@ const Footer: React.FC<FooterProps> = ({
   }
 
   return (
-    <footer className="w-full min-w-fit border-t bg-[#333] text-white border-gray-500/50 mt-8 sticky bottom-0 z-2">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
+    <footer className="w-full border-t bg-[#333] text-white border-gray-500/50 mt-8 sticky bottom-0 z-2">
+      <div className="w-full max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm min-w-0">
         <span>
           © {new Date().getFullYear()} <strong>Finanzy</strong> Todos os
           direitos reservados.
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({
 
           <LuDot className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
 
-          <span>v1.2.0</span>
+          <span>v1.2.6</span>
         </span>
       </div>
     </footer>

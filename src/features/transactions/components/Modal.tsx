@@ -30,8 +30,8 @@ const Modal: React.FC<ModalProps> = ({
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="fixed flex inset-0 justify-center items-center bg-black/80 h-screen z-1 mx-auto">
-      <div className="flex flex-col bg-white h-fit w-150 rounded-xl border-gray-500/50 border pt-2 relative">
+    <div className="fixed inset-0 flex justify-center items-center bg-black/80 z-3">
+      <div className="flex flex-col bg-white w-full max-h-[90%] sm:h-fit sm:max-w-2xl rounded-xl border border-gray-500/50 pt-2 relative mx-4 overflow-y-auto">
         {/* - Título geral - */}
 
         <h1 className="flex w-full font-bold text-black text-xl sm:text-3xl justify-center mb-4 pt-2">
@@ -47,7 +47,7 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Título da transação - */}
 
-        <div className="flex flex-col mb-6 px-10">
+        <div className="flex flex-col mb-2 px-10">
           <label className="flex flex-col text-gray-700 font-semibold mb-2">
             Título
           </label>
@@ -64,14 +64,14 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Valor da transação - */}
 
-        <div className="flex flex-col mb-6 px-10">
+        <div className="flex flex-col mb-2 px-10">
           <label className="flex flex-col text-gray-700 font-semibold mb-2">
             Valor
           </label>
-          <div className="bg-gray-100 px-4 py-2 border-gray-500/50 border rounded-lg w-full text-md outline-none pr-2 font-bold text-gray-700">
+          <div className="bg-gray-100 flex px-4 py-2 border-gray-500/50 border rounded-lg w-full text-sm outline-none pr-2 font-bold text-gray-700">
             R$:
             <input
-              className="outline-none pl-2 font-normal placeholder:font-normal text-gray-700"
+              className="outline-none pl-2 font-normal placeholder:font-normal text-gray-700 w-full"
               type="text"
               pattern="[0-9]*[.,]?[0-9]{0,2}"
               inputMode="decimal"
@@ -89,7 +89,7 @@ const Modal: React.FC<ModalProps> = ({
 
                 setAmountInput(value);
 
-                const raw = e.target.value.replace(",", ".");
+                const raw = value.replace(",", ".");
                 const parsed = parseFloat(raw);
 
                 setAmount(isNaN(parsed) ? 0 : parsed);
@@ -102,7 +102,7 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Categoria da transação - */}
 
-        <div className="flex flex-col mb-6 px-10 relative">
+        <div className="flex flex-col mb-2 px-10 relative">
           <label className="text-gray-700 font-semibold mb-2">Categoria</label>
 
           <input
@@ -115,7 +115,7 @@ const Modal: React.FC<ModalProps> = ({
           />
 
           {isOpen && (
-            <ul className="absolute top-full left-10 right-10 mt-1 max-h-40 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-lg z-1">
+            <ul className="absolute top-full left-10 right-10 mt-1 max-h-40 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-lg z-50">
               {(type === "Entrada" ? IncomeOptions : ExpenseOptions).map(
                 (option) => (
                   <li
@@ -136,7 +136,7 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Data da transação - */}
 
-        <div className="flex flex-col mb-6 px-10">
+        <div className="flex flex-col mb-2 px-10">
           <label className="flex flex-col text-gray-700 font-semibold mb-2">
             Data
           </label>
@@ -151,22 +151,30 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* - Botões - */}
 
-        <div className="flex justify-around items-center mb-2 px-10">
+        <div className="flex justify-around items-center mb-4 px-10">
           <button
-            className="flex bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white border border-gray-500/50 py-2 px-4 rounded-lg cursor-pointer mb-2"
+            className="flex bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white border border-gray-500/50 py-2 px-4 rounded-lg cursor-pointer"
             onClick={() => {
               if (!title.trim()) {
                 alert("O título não pode ser vazio");
                 return;
               }
 
-              onSubmit({ ...transaction, title, amount, category, type, date });
+              onSubmit({
+                ...transaction,
+                title,
+                amount,
+                category,
+                type,
+                date,
+              });
             }}
           >
             Salvar
           </button>
+
           <button
-            className="flex bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white border border-gray-500/50 py-2 px-4 rounded-lg cursor-pointer mb-2"
+            className="flex bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white border border-gray-500/50 py-2 px-4 rounded-lg cursor-pointer"
             onClick={() => {
               setTitle(transaction.title);
               setAmount(transaction.amount);

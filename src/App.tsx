@@ -24,7 +24,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({
   isMobileTransactionListOpen,
 }) => (
   <>
-    <div className="flex flex-col min-w-fit min-h-screen">
+    <div className="flex max-w-full flex-col min-w-fit min-h-screen">
       <Header />
       <NewUserModal session={session} />
       <Outlet />

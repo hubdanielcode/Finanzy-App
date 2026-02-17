@@ -105,12 +105,12 @@ const Filter: React.FC<FilterProps> = ({
 
         {isFilterOpen && (
           <div
-            className="grid grid-cols-3 mt-6 relative"
+            className="grid grid-cols-3 mt-6 relative gap-3"
             ref={filterRef}
           >
             {/* - Período - */}
 
-            <div className="mx-3 w-60 relative">
+            <div className="full relative">
               <label className="text-gray-700 font-semibold mb-2 block">
                 Período
               </label>
@@ -129,7 +129,7 @@ const Filter: React.FC<FilterProps> = ({
               />
 
               {isPeriodOpen && (
-                <ul className="absolute z-1 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto">
+                <ul className="absolute z-1 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto">
                   {PeriodOptions.map((option) => (
                     <li
                       className="px-4 py-2 text-md text-gray-700 cursor-pointer hover:bg-blue-200 hover:text-blue-600 transition-colors"
@@ -149,7 +149,7 @@ const Filter: React.FC<FilterProps> = ({
 
             {/* - Tipo - */}
 
-            <div className="mx-3 w-60 relative">
+            <div className="w-full relative">
               <label className="text-gray-700 font-semibold mb-2 block">
                 Tipo
               </label>
@@ -168,7 +168,7 @@ const Filter: React.FC<FilterProps> = ({
               />
 
               {isTypeOpen && (
-                <ul className="absolute z-1 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg">
+                <ul className="absolute z-1 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg">
                   {TransactionTypeOptions.map((option) => (
                     <li
                       className="px-4 py-2 text-md text-gray-700 cursor-pointer hover:bg-blue-200 hover:text-blue-600 transition-colors"
@@ -190,7 +190,7 @@ const Filter: React.FC<FilterProps> = ({
 
             {/* - Categoria - */}
 
-            <div className="mx-3 w-60 relative">
+            <div className="w-full relative">
               <label className="text-gray-700 font-semibold mb-2 block">
                 Categoria
               </label>
@@ -209,7 +209,7 @@ const Filter: React.FC<FilterProps> = ({
               />
 
               {isCategoryOpen && (
-                <ul className="absolute z-1 mt-2 w-60 bg-white border border-gray-200 rounded-xl shadow-lg max-h-72 overflow-y-auto">
+                <ul className="absolute z-1 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-72 overflow-y-auto">
                   {type !== "Saída" && (
                     <>
                       <span className="block px-4 py-2 text-md font-semibold tracking-wide text-white bg-black">

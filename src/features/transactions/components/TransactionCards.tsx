@@ -64,17 +64,13 @@ const TransactionCards: React.FC<{ isPrivate: boolean }> = ({ isPrivate }) => {
             </h1>
 
             <p
-              className={`
-                font-bold
-                text-[clamp(1rem,0.42vw,1.5rem)]
-                whitespace-nowrap
-                ${
-                  availableMoney > 0
-                    ? "text-green-300"
-                    : availableMoney < 0
-                      ? "text-red-300"
-                      : "text-white"
-                }
+              className={`font-bold text-[clamp(1rem,0.42vw,1.5rem)] whitespace-nowrap ${
+                availableMoney > 0
+                  ? "text-green-300"
+                  : availableMoney < 0
+                    ? "text-red-300"
+                    : "text-white"
+              }
               `}
             >
               {formatPrivateCurrency(availableMoney, isPrivate)}

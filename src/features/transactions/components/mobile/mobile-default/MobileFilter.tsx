@@ -1,11 +1,11 @@
 import { Funnel, X } from "lucide-react";
-import type { Transaction } from "../../model/TransactionTypes";
+import type { Transaction } from "../../../model/TransactionTypes";
 import {
   ExpenseOptions,
   IncomeOptions,
   PeriodOptions,
   TransactionTypeOptions,
-} from "../../model/TransactionOptions";
+} from "../../../model/TransactionOptions";
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 

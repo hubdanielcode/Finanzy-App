@@ -8,8 +8,8 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-full min-w-fit py-6 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-        <div className="flex justify-between items-center max-w-7xl overflow-auto">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+        <div className="flex justify-between items-center w-full max-w-7xl overflow-auto">
           {/* - Logo + título - */}
 
           <div className="backdrop-blur-sm rounded-xl flex items-center p-4">
