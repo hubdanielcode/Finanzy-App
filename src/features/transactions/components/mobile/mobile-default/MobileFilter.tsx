@@ -67,7 +67,7 @@ const MobileFilter: React.FC<FilterProps> = ({
 
   return (
     <>
-      <div className="flex items-center gap-3 mb-4 mt-6 bg-white w-full">
+      <div className="flex items-center gap-3 mb-4 mt-6 bg-white w-full max-w-fit overflow-auto">
         <Funnel className="bg-blue-100 h-8 w-8 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 text-white p-1.5 ml-4" />
         <h1 className="font-bold text-2xl text-black bg-white">
           Filtrar Transações
