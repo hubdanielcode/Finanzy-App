@@ -59,11 +59,17 @@ Dashboard de Gestão Financeira/
 │   │   └── transactions/
 │   │       ├── components/
 │   │       │   ├── mobile/
-│   │       │   │   ├── MobileActionBar.tsx
-│   │       │   │   ├── MobileFilter.tsx
-│   │       │   │   ├── MobileTransactionForm.tsx
-│   │       │   │   ├── MobileTransactionList.tsx
-│   │       │   │   └── MobileUniqueTransaction.tsx
+│   │       │   │   ├── mobile-deafault/
+│   │       │   │   │    ├── MobileActionBar.tsx
+│   │       │   │   │    ├── MobileFilter.tsx
+│   │       │   │   │    ├── MobileTransactionForm.tsx
+│   │       │   │   │    ├── MobileTransactionList.tsx
+│   │       │   │   │    └── MobileUniqueTransaction.tsx
+│   │       │   │   └──mobile-landscape/
+│   │       │   │       ├──LandscapeTransactionForm.tsx
+│   │       │   │       ├──LandscapeTransactionList.tsx
+│   │       │   │       └──LandscapeUniqueTransactions.tsx
+│   │       │   │
 │   │       │   ├── Filter.tsx
 │   │       │   ├── Modal.tsx
 │   │       │   ├── Pagination.tsx
@@ -73,6 +79,10 @@ Dashboard de Gestão Financeira/
 │   │       │   └── UniqueTransaction.tsx
 │   │       ├── context/
 │   │       │   └── TransactionContext.tsx
+│   │       │
+│   │       ├──hooks/
+│   │       │   ├──useIsMobileDevice.ts
+│   │       │   └──useOrientation.ts
 │   │       ├── model/
 │   │       │   ├── CategoryIcons.tsx
 │   │       │   ├── PaginationDropdownOptions.ts
