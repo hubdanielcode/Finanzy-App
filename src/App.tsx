@@ -26,7 +26,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({
   <>
     <div className="flex max-w-full flex-col min-w-fit min-h-screen">
       <Header />
-      <NewUserModal session={session} />
+      {session && <NewUserModal session={session} />}
       <Outlet />
       <Footer
         isMobileFormOpen={isMobileFormOpen}

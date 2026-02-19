@@ -127,9 +127,7 @@ const Authentication = () => {
           Cadastre-se
         </h1>
 
-        {/* - Inputs - */}
-
-        {/* - Primeiro Nome - */}
+        {/* - Input de primeiro nome - */}
 
         <div className="flex items-center gap-3 h-12 landscape:h-10 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-4">
           <FaUser className="text-blue-600 text-lg" />
@@ -142,7 +140,7 @@ const Authentication = () => {
           />
         </div>
 
-        {/* - Último Nome - */}
+        {/* - input de último nome - */}
 
         <div className="flex items-center gap-3 h-12 landscape:h-10 px-4 rounded-xl bg-gray-200 border border-gray-500/50 focus-within:ring-2 focus-within:ring-blue-500 mb-4">
           <FaUser className="text-blue-600 text-lg" />

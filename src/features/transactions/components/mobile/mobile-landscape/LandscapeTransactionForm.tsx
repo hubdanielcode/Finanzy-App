@@ -149,14 +149,14 @@ const LandscapeTransactionForm: React.FC<TransactionFormProps> = ({
         ref={typeRef}
         onSubmit={handleSubmit}
       >
-        {/* Cabeçalho */}
+        {/* - Cabeçalho - */}
 
         <div className="w-full flex items-center mb-6">
           <Plus className="bg-blue-200 mr-3 h-8 w-8 rounded-xl text-blue-600" />
           <h1 className="font-bold text-2xl">Nova Transação</h1>
         </div>
 
-        {/* Título */}
+        {/* - Título - */}
 
         <div className="mb-4">
           <label className="text-gray-700 font-semibold mb-2 block">
@@ -173,7 +173,7 @@ const LandscapeTransactionForm: React.FC<TransactionFormProps> = ({
           />
         </div>
 
-        {/* Valor */}
+        {/* - Valor - */}
 
         <div className="mb-4">
           <label className="text-gray-700 font-semibold mb-2 block">
@@ -192,7 +192,7 @@ const LandscapeTransactionForm: React.FC<TransactionFormProps> = ({
           </div>
         </div>
 
-        {/* Tipo */}
+        {/* - Tipo - */}
 
         <div className="mb-4">
           <label className="text-gray-700 font-semibold mb-2 block">Tipo</label>
@@ -222,7 +222,7 @@ const LandscapeTransactionForm: React.FC<TransactionFormProps> = ({
           </div>
         </div>
 
-        {/* Categoria */}
+        {/* - Categoria - */}
 
         <div
           className="mb-4"
@@ -267,7 +267,7 @@ const LandscapeTransactionForm: React.FC<TransactionFormProps> = ({
           )}
         </div>
 
-        {/* Data */}
+        {/* - Data - */}
 
         <div className="mb-6">
           <label className="text-gray-700 font-semibold mb-2 block">Data</label>
