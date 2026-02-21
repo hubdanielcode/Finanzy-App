@@ -1,38 +1,141 @@
-# 💰 Finanzy App
+# 💰 Finanzy
 
-Aplicação web desenvolvida em React com TypeScript para gerenciamento financeiro pessoal, permitindo controle de receitas, despesas e organização de transações de forma simples e intuitiva.
+Aplicação web de **gestão financeira pessoal** desenvolvida com React e TypeScript, permitindo controle de receitas e despesas com autenticação segura, atualização em tempo real e interface totalmente responsiva.
 
-O sistema possibilita registrar entradas e saídas, visualizar saldo atualizado e acompanhar o histórico financeiro em uma interface moderna e responsiva.
+O projeto foi desenvolvido com foco em boas práticas de arquitetura frontend, organização escalável por features e integração com backend via BaaS.
 
-O projeto foi desenvolvido para ser parte do meu portfólio pessoal, com o objetivo de demonstrar minhas habilidades em desenvolvimento frontend, organização de código, autenticação de usuários e experiência do usuário. Pretendo atualizá-lo continuamente, adicionando novas funcionalidades e melhorias ao longo do tempo.
-
-🌐 Deploy realizado na Vercel.
+🔗 Deploy: https://finanzy-app.vercel.app/ 
+🔗 Repositório: https://github.com/hubdanielcode/Finanzy-App
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Demonstração
 
-🔐 Autenticação de usuários (login e registro) com Supabase  
-👤 Sessão persistente de usuário autenticado  
-💵 Cadastro de receitas e despesas  
-📋 Listagem completa de transações  
-🗑️ Remoção de transações  
-📊 Cálculo automático do saldo total  
-📈 Atualização dinâmica dos valores  
-🔄 Gerenciamento de estado em tempo real  
-⚠️ Validação de formulários  
-⏳ Feedback visual para ações do usuário  
-📱 Layout totalmente responsivo (desktop e mobile)
+O sistema permite:
+
+- Cadastro e autenticação de usuários  
+- Registro de receitas e despesas  
+- Cálculo automático do saldo total  
+- Atualização dinâmica de transações  
+- Persistência de sessão  
+- Interface responsiva para desktop e mobile  
+
+---
+
+## 🏗️ Arquitetura e Decisões Técnicas
+
+O projeto foi estruturado seguindo o padrão de organização por **features**, promovendo escalabilidade e separação de responsabilidades:
+
+- `features/authentication`
+- `features/transactions`
+- `shared`
+- `services`
+- `context`
+- `utils`
+
+### Principais decisões técnicas:
+
+- Separação clara entre lógica, UI e serviços  
+- Context API para gerenciamento de estado  
+- Camada de services para comunicação com o Supabase  
+- Componentização reutilizável  
+- Hooks customizados para abstração de lógica  
+- Estrutura preparada para crescimento e manutenção futura  
+
+---
+
+## 🔐 Autenticação
+
+Implementada com Supabase utilizando:
+
+- Registro e login com e-mail e senha  
+- Autenticação baseada em JWT  
+- Persistência automática de sessão  
+- Proteção de rotas privadas  
+- Isolamento de dados por usuário autenticado  
+
+Cada usuário visualiza exclusivamente suas próprias transações.
+
+---
+
+## ⚙️ Funcionalidades
+
+✔ CRUD completo de transações  
+✔ Cálculo automático de saldo  
+✔ Paginação de dados  
+✔ Filtros dinâmicos  
+✔ Feedback visual de ações  
+✔ Validação de formulários  
+✔ Layout adaptado para mobile (incluindo orientação landscape)  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-React (Vite)  
-TypeScript  
-CSS3  
-Supabase (Autenticação e Backend)  
-Vercel (Deploy e hospedagem)
+- React (Vite)  
+- TypeScript  
+- CSS3  
+- Supabase (Autenticação e Banco de Dados)  
+- Vercel (Deploy e hospedagem)  
+- Git & GitHub  
+
+---
+
+## ▶️ Executando Localmente
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/hubdanielcode/Finanzy-App.git
+cd Finanzy-App
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Crie um arquivo `.env` com suas credenciais do Supabase:
+
+```
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+```
+
+Execute a aplicação:
+
+```bash
+npm run dev
+```
+
+Acesse no navegador:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧠 Conceitos Aplicados
+
+- Componentização  
+- Organização escalável por features  
+- Gerenciamento de estado com Hooks e Context API  
+- Autenticação JWT  
+- Integração com Backend as a Service (BaaS)  
+- Persistência de sessão  
+- Boas práticas de estruturação de projeto frontend  
+
+---
+
+## 📌 Próximas Melhorias
+
+- Implementação de testes (Jest / React Testing Library)  
+- Dashboard com gráficos financeiros  
+- Filtros avançados por período  
+- Melhorias de performance  
+- Dark mode  
 
 ---
 
@@ -127,17 +230,6 @@ Dashboard de Gestão Financeira/
 
 ---
 
-## 🔐 Autenticação
-
-A aplicação utiliza o Supabase para:
-
-- Registro de novos usuários
-- Login com e-mail e senha
-- Gerenciamento de sessão
-- Proteção de rotas privadas
-
----
-
 ## 🌍 Deploy
 
 O projeto está publicado na Vercel, garantindo:
@@ -148,58 +240,15 @@ O projeto está publicado na Vercel, garantindo:
 
 ---
 
-## ▶️ Como Executar o Projeto Localmente
+## 📱 Responsividade
 
-1️⃣ Clonar o repositório:
+A aplicação possui adaptação para:
 
-```bash
-git clone https://github.com/hubdanielcode/Finanzy-App.git
-```
+- Desktop  
+- Mobile padrão  
+- Mobile em modo landscape  
 
-2️⃣ Acessar a pasta do projeto:
-
-```bash
-cd Dashboard\ de\ Gestão\ Financeira
-```
-
-3️⃣ Instalar as dependências:
-
-```bash
-npm install
-```
-
-4️⃣ Criar um arquivo `.env` e configurar as variáveis do Supabase:
-
-```
-VITE_SUPABASE_URL=your_url
-VITE_SUPABASE_ANON_KEY=your_key
-```
-
-5️⃣ Rodar a aplicação:
-
-```bash
-npm run dev
-```
-
-Acesse no navegador:
-
-```
-http://localhost:5173
-```
-
----
-
-## ⚙️ Conceitos Aplicados
-
-Componentização  
-Gerenciamento de estado com Hooks  
-Autenticação JWT com Supabase  
-Proteção de rotas  
-Integração com Backend (BaaS)  
-Persistência de sessão  
-Boas práticas de organização de projeto
-
----
+Com componentes específicos para cada contexto de tela.
 
 ## 📌 Observações
 
@@ -211,3 +260,5 @@ Cada usuário visualiza apenas suas próprias transações.
 ## 📄 Licença
 
 Este projeto é livre para fins de estudo, aprendizado e uso pessoal.
+
+---
