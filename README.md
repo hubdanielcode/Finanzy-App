@@ -4,7 +4,7 @@ Aplicação web de **gestão financeira pessoal** desenvolvida com React e TypeS
 
 O projeto foi desenvolvido com foco em boas práticas de arquitetura frontend, organização escalável por features e integração com backend via BaaS.
 
-🔗 Deploy: https://finanzy-app.vercel.app/ 
+🔗 Deploy: https://finanzy-app.vercel.app/ <br/>
 🔗 Repositório: https://github.com/hubdanielcode/Finanzy-App
 
 ---
