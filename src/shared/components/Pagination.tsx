@@ -118,12 +118,12 @@ const Pagination: React.FC<PaginationProps> = ({
         {pages.map((page) => (
           <button
             className={`cursor-pointer flex items-center justify-center h-8 sm:h-12 w-6 sm:w-8 px-3 py-2 rounded-lg font-medium transition-colors
-              ${
-                currentPage === page
-                  ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-sm"
-                  : "text-gray-700 hover:bg-gray-100 border border-gray-300"
-              }
-            `}
+                ${
+                  currentPage === page
+                    ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-sm"
+                    : "text-gray-700 hover:bg-gray-100 border border-gray-300"
+                }
+              `}
             key={page}
             onClick={() => handleSetPage(page)}
           >

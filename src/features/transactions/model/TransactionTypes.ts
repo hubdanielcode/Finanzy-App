@@ -8,6 +8,7 @@ export interface Transaction {
   category: string;
   user_id: string;
 }
+
 export type TransactionType = "Entrada" | "Saída";
 
 export interface NewTransaction {

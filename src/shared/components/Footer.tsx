@@ -1,5 +1,7 @@
 import { LuDot } from "react-icons/lu";
 
+const appVersion = "v1.2.6";
+
 interface FooterProps {
   isMobileFormOpen: boolean;
 
@@ -30,11 +32,11 @@ const Footer: React.FC<FooterProps> = ({
 
           <LuDot className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
 
-          <span>v1.2.6</span>
+          <span>{appVersion}</span>
         </span>
       </div>
     </footer>
   );
 };
 
-export { Footer };
+export { Footer, appVersion };

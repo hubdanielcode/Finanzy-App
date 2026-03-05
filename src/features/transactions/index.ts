@@ -15,6 +15,7 @@ export { MobileTransactionList } from "./components/mobile/mobile-default/Mobile
 export { MobileTransactionForm } from "./components/mobile/mobile-default/MobileTransactionForm";
 export { LandscapeTransactionForm } from "./components/mobile/mobile-landscape/LandscapeTransactionForm";
 export { LandscapeTransactionList } from "./components/mobile/mobile-landscape/LandscapeTransactionList";
+export { LandscapeUniqueTransaction } from "./components/mobile/mobile-landscape/LandscapeUniqueTransactions";
 
 /* - Context - */
 

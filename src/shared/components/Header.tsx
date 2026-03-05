@@ -32,8 +32,9 @@ const Header: React.FC = () => {
           {/* - Botão - */}
 
           <button
+            className="flex items-center gap-2 bg-white/20 border border-gray-50/50 backdrop-blur-sm rounded-lg py-2 px-4 font-semibold whitespace-nowrap focus:none outline:none cursor-pointer"
+            aria-label={isPrivate ? "Mostrar" : "Ocultar"}
             onClick={() => setIsPrivate(!isPrivate)}
-            className="flex items-center gap-2 bg-white/20 border border-gray-500/50 backdrop-blur-sm rounded-lg py-2 px-4 font-semibold whitespace-nowrap focus:none outline:none cursor-pointer"
           >
             {isPrivate ? (
               <EyeClosed className="h-6 w-6" />

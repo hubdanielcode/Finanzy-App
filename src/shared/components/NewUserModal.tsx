@@ -65,7 +65,7 @@ const NewUserModal: React.FC<NewUserModalProps> = ({ session }) => {
         </div>
 
         <h2 className="text-center text-lg sm:text-3xl font-bold text-white mt-10 mb-10">
-          Bem-vindo{firstName && `, ${firstName}`} 🎉
+          Bem-vindo(a){firstName && `, ${firstName}`} 🎉
         </h2>
 
         <div className="grid grid-cols-[1fr_2fr] items-center gap-6 mb-6">

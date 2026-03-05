@@ -178,8 +178,9 @@ const Authentication = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            type="button"
             className="flex items-center gap-2 bg-transparent rounded-lg py-1 px-2 font-semibold whitespace-nowrap outline-none cursor-pointer"
+            aria-label="Toggle Password Visibility"
+            type="button"
             onClick={() => setIsPasswordPrivate(!isPasswordPrivate)}
           >
             {isPasswordPrivate ? (
@@ -202,8 +203,9 @@ const Authentication = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <button
-            type="button"
             className="flex items-center gap-2 bg-transparent rounded-lg py-1 px-2 font-semibold whitespace-nowrap outline-none cursor-pointer"
+            aria-label="Toggle Confirm Password Visibility"
+            type="button"
             onClick={() =>
               setIsConfirmPasswordPrivate(!isConfirmPasswordPrivate)
             }

@@ -16,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
   const signInRef = useRef<HTMLButtonElement | null>(null);
 
-  const LoginWithAccount = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const loginWithAccount = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -101,8 +101,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button
-            type="button"
             className="flex items-center gap-2 bg-transparent rounded-lg py-1 px-2 font-semibold whitespace-nowrap outline-none cursor-pointer"
+            type="button"
+            aria-label="Toggle Password Visibility Login"
             onClick={() => setIsPasswordPrivate(!isPasswordPrivate)}
           >
             {isPasswordPrivate ? (
@@ -128,7 +129,7 @@ const Login = () => {
 
         <button
           className="mt-2 w-full h-12 landscape:h-10 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:from-blue-500 hover:to-indigo-500 transition cursor-pointer"
-          onClick={LoginWithAccount}
+          onClick={loginWithAccount}
           ref={signInRef}
         >
           Entrar
