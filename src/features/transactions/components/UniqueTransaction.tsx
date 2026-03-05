@@ -52,7 +52,10 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
       </h1>
 
       <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl sm:h-25 h-25 px-4 py-3 mb-6 w-87 sm:w-full sm:max-w-3xl">
-        <div className="hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50">
+        <div
+          className="hidden sm:flex sm:justify-center sm:items-center sm:text-2xl bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 sm:rounded-full sm:w-14 sm:h-14 sm:p-3 sm:border border-gray-500/50"
+          data-testid="category-icon"
+        >
           {categoryIcon}
         </div>
 
@@ -93,10 +96,14 @@ const UniqueTransaction: React.FC<UniqueTransactionProps> = ({
         <div className="absolute top-3 right-3 flex sm:flex-row flex-col gap-4 sm:m-4">
           <FaPenAlt
             className="sm:h-10 sm:w-10 h-7 w-5 mr-3 sm:mr-0 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-blue-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            aria-label="edit-button"
+            data-testid="FaPenAlt"
             onClick={() => setIsModalOpen(true)}
           />
           <FaTrashAlt
             className="sm:h-10 sm:w-10 h-7 w-5 mr-3 sm:mr-0 sm:p-2 sm:hover:p-1.5 hover:bg-gray-200 hover:text-red-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            aria-label="delete-button"
+            data-testid="FaTrashAlt"
             onClick={() => handleDeleteTransaction(transaction.id!)}
           />
         </div>

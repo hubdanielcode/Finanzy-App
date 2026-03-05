@@ -7,7 +7,7 @@ const TransactionCards: React.FC<{ isPrivate: boolean }> = ({ isPrivate }) => {
   const context = useContext(TransactionContext);
 
   if (!context) {
-    throw new Error("TransactionContext must be used within a contextProvider");
+    throw new Error("TransactionContext must be used within a ContextProvider");
   }
 
   const { totalIncome, totalExpense, availableMoney } = context;
@@ -72,6 +72,7 @@ const TransactionCards: React.FC<{ isPrivate: boolean }> = ({ isPrivate }) => {
                     : "text-white"
               }
               `}
+              data-testid="saldo"
             >
               {formatPrivateCurrency(availableMoney, isPrivate)}
             </p>

@@ -31,7 +31,10 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black/80 z-3">
-      <div className="flex flex-col bg-white w-full max-h-[90%] sm:h-fit sm:max-w-2xl rounded-xl border border-gray-500/50 pt-2 relative mx-4 overflow-y-auto">
+      <div
+        className="flex flex-col bg-white w-full max-h-[90%] sm:h-fit sm:max-w-2xl rounded-xl border border-gray-500/50 pt-2 relative mx-4 overflow-y-auto"
+        role="dialog"
+      >
         {/* - Título geral - */}
 
         <h1 className="flex w-full font-bold text-black text-xl sm:text-3xl justify-center mb-4 pt-2">
@@ -40,6 +43,7 @@ const Modal: React.FC<ModalProps> = ({
 
         <button
           className="absolute top-5 right-5 bg-gray-800 hover:bg-black text-white rounded-xl p-1 cursor-pointer"
+          aria-label="close-modal"
           onClick={onClose}
         >
           <X size={25} />
