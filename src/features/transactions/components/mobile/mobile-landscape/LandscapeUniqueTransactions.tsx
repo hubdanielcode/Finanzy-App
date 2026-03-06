@@ -52,7 +52,10 @@ const LandscapeUniqueTransaction: React.FC<UniqueTransactionProps> = ({
       </h1>
 
       <div className="relative bg-white text-black flex items-center border border-gray-500/50 rounded-xl h-25 px-4 py-3 mb-6 w-full max-w-3xl">
-        <div className="flex items-center justify-center bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 rounded-full w-12 h-12 p-3 border border-gray-500/50">
+        <div
+          className="flex items-center justify-center bg-linear-to-br from-blue-400 via-indigo-400 to-purple-400 rounded-full w-12 h-12 p-3 border border-gray-500/50"
+          data-testid="category-icon"
+        >
           {categoryIcon}
         </div>
 
@@ -93,10 +96,14 @@ const LandscapeUniqueTransaction: React.FC<UniqueTransactionProps> = ({
         <div className="absolute top-2 right-3 flex flex-col gap-1">
           <FaPenAlt
             className="h-10 w-10 mr-3 p-2 hover:p-1.5 hover:bg-gray-200 hover:text-blue-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            aria-label="edit-button"
+            data-testid="FaPenAlt"
             onClick={() => setIsModalOpen(true)}
           />
           <FaTrashAlt
             className="h-10 w-10 mr-3 p-2 hover:p-1.5 hover:bg-gray-200 hover:text-red-600 hover:border hover:border-gray-100 rounded-lg cursor-pointer"
+            aria-label="delete-button"
+            data-testid="FaTrashAlt"
             onClick={() => handleDeleteTransaction(transaction.id!)}
           />
         </div>

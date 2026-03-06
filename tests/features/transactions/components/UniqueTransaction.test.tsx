@@ -1,16 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import {
-  TransactionContext,
   UniqueTransaction,
+  TransactionContext,
   type Transaction,
 } from "@/features/transactions";
 import { vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 import {
   ExpenseIcons,
   IncomeIcons,
 } from "@/features/transactions/model/CategoryIcons";
-import userEvent from "@testing-library/user-event";
 
 /* - Criando uma função para simular o TransactionContext - */
 
