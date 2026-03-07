@@ -70,12 +70,35 @@ Cada usuário visualiza exclusivamente suas próprias transações.
 
 ---
 
+## 🧪 Testes
+
+O projeto conta com uma suite de testes implementada com **Vitest** e **React Testing Library**, cobrindo as principais camadas da aplicação.
+
+Execute os testes com:
+
+```bash
+npm run test
+```
+
+A cobertura inclui:
+
+- Autenticação — renderização, formulários, proteção de rotas e recuperação de senha.
+- Transactions Components — Filter, Modal, TransactionCards, TransactionForm, TransactionList, UniqueTransaction e todos os componentes mobile (padrão e landscape).  
+- TransactionContext — estado global, cálculos derivados (totalIncome, totalExpense, availableMoney) e handlers (add, update, delete). 
+- Hooks — useIsMobileDevice (detecção via user agent) e useOrientation (detecção e atualização via resize).  
+- Model — CategoryIcons, PaginationDropdownOptions e TransactionOptions.  
+- TransactionService — createTransaction, getTransactions, updateTransaction e deleteTransaction com mock do Supabase.
+- Shared Utils — formatTodayString e calculatePeriod com fake timers.
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 - React (Vite)  
 - TypeScript  
 - CSS3  
 - Supabase (Autenticação e Banco de Dados)  
+- Vitest + React Testing Library (Testes)  
 - Vercel (Deploy e hospedagem)  
 - Git & GitHub  
 
@@ -125,13 +148,13 @@ http://localhost:5173
 - Autenticação JWT  
 - Integração com Backend as a Service (BaaS)  
 - Persistência de sessão  
+- Testes unitários e de integração com mocks  
 - Boas práticas de estruturação de projeto frontend  
 
 ---
 
 ## 📌 Próximas Melhorias
 
-- Implementação de testes (Jest / React Testing Library)  
 - Dashboard com gráficos financeiros  
 - Filtros avançados por período  
 - Melhorias de performance  
@@ -214,6 +237,47 @@ Dashboard de Gestão Financeira/
 │   ├── App.tsx
 │   ├── index.css
 │   └── main.tsx
+├── tests/
+│   ├── features/
+│   │   ├── authentication/
+│   │   │   └── components/
+│   │   │       ├── Authentication.test.tsx
+│   │   │       ├── Login.test.tsx
+│   │   │       ├── ProtectedRoute.test.tsx
+│   │   │       └── RecoverPassword.test.tsx
+│   │   └── transactions/
+│   │       ├── components/
+│   │       │   ├── mobile/
+│   │       │   │   ├── mobile-deafault/
+│   │       │   │   │    ├── MobileActionBar.test.tsx
+│   │       │   │   │    ├── MobileFilter.test.tsx
+│   │       │   │   │    ├── MobileTransactionForm.test.tsx
+│   │       │   │   │    ├── MobileTransactionList.test.tsx
+│   │       │   │   │    └── MobileUniqueTransaction.test.tsx
+│   │       │   │   └──mobile-landscape/
+│   │       │   │       ├──LandscapeTransactionForm.test.tsx
+│   │       │   │       ├──LandscapeTransactionList.test.tsx
+│   │       │   │       └──LandscapeUniqueTransactions.test.tsx
+│   │       │   ├── Filter.test.tsx
+│   │       │   ├── Modal.test.tsx
+│   │       │   ├── TransactionCards.test.tsx
+│   │       │   ├── TransactionForm.test.tsx
+│   │       │   ├── TransactionList.test.tsx
+│   │       │   └── UniqueTransaction.test.tsx
+│   │       ├── context/
+│   │       │   └── TransactionContext.test.tsx
+│   │       ├── hooks/
+│   │       │   ├── useIsMobileDevice.test.ts
+│   │       │   └── useOrientation.test.ts
+│   │       ├── model/
+│   │       │   ├── CategoryIcons.test.ts
+│   │       │   ├── PaginationDropdownOptions.test.ts
+│   │       │   └── TransactionOptions.test.ts
+│   │       └── service/
+│   │           └── TransactionService.test.ts
+│   └── shared/
+│       └── utils/
+│           └── date.test.ts
 ├── .env
 ├── .gitignore
 ├── eslint.config.js
