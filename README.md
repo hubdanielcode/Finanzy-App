@@ -170,10 +170,12 @@ Dashboard de Gestão Financeira/
 ├── node_modules/
 ├── public/
 │   └── FinanzyLogo.png
+│
 ├── src/
 │   ├── assets/
 │   │   └── images/
 │   │       └── mascote.png
+│   │
 │   ├── features/
 │   │   ├── authentication/
 │   │   │   ├── components/
@@ -181,7 +183,9 @@ Dashboard de Gestão Financeira/
 │   │   │   │   ├── Login.tsx
 │   │   │   │   ├── ProtectedRoute.tsx
 │   │   │   │   └── RecoverPassword.tsx
+│   │   │   │
 │   │   │   └── index.ts
+│   │   │   
 │   │   └── transactions/
 │   │       ├── components/
 │   │       │   ├── mobile/
@@ -191,6 +195,7 @@ Dashboard de Gestão Financeira/
 │   │       │   │   │    ├── MobileTransactionForm.tsx
 │   │       │   │   │    ├── MobileTransactionList.tsx
 │   │       │   │   │    └── MobileUniqueTransaction.tsx
+│   │       │   │   │
 │   │       │   │   └──mobile-landscape/
 │   │       │   │       ├──LandscapeTransactionForm.tsx
 │   │       │   │       ├──LandscapeTransactionList.tsx
@@ -203,22 +208,27 @@ Dashboard de Gestão Financeira/
 │   │       │   ├── TransactionForm.tsx
 │   │       │   ├── TransactionList.tsx
 │   │       │   └── UniqueTransaction.tsx
+│   │       │
 │   │       ├── context/
 │   │       │   └── TransactionContext.tsx
 │   │       │
 │   │       ├──hooks/
 │   │       │   ├──useIsMobileDevice.ts
 │   │       │   └──useOrientation.ts
+│   │       │
 │   │       ├── model/
 │   │       │   ├── CategoryIcons.tsx
 │   │       │   ├── PaginationDropdownOptions.ts
 │   │       │   ├── TransactionOptions.ts
 │   │       │   └── TransactionTypes.ts
+│   │       │
 │   │       ├── services/
 │   │       │   └── transactionService.ts
+│   │       │
 │   │       ├── utils/
 │   │       │    ├── formatPrivateCurrency.ts
 │   │       │    └── formatCurrency.ts
+│   │       │
 │   │       └── index.ts
 │   │
 │   ├── shared/
@@ -228,15 +238,19 @@ Dashboard de Gestão Financeira/
 │   │   │   ├── MainContent.tsx
 │   │   │   ├── Missing.tsx
 │   │   │   └── NewUserModal.tsx
+│   │   │
 │   │   ├── utils/
 │   │   │    └── date.ts
+│   │   │
 │   │   └── index.ts
 │   │
 │   ├── supabase/
 │   │   └── supabase.ts
+│   │
 │   ├── App.tsx
 │   ├── index.css
 │   └── main.tsx
+│   
 ├── tests/
 │   ├── features/
 │   │   ├── authentication/
@@ -245,6 +259,7 @@ Dashboard de Gestão Financeira/
 │   │   │       ├── Login.test.tsx
 │   │   │       ├── ProtectedRoute.test.tsx
 │   │   │       └── RecoverPassword.test.tsx
+│   │   │
 │   │   └── transactions/
 │   │       ├── components/
 │   │       │   ├── mobile/
@@ -254,25 +269,31 @@ Dashboard de Gestão Financeira/
 │   │       │   │   │    ├── MobileTransactionForm.test.tsx
 │   │       │   │   │    ├── MobileTransactionList.test.tsx
 │   │       │   │   │    └── MobileUniqueTransaction.test.tsx
+│   │       │   │   │
 │   │       │   │   └──mobile-landscape/
 │   │       │   │       ├──LandscapeTransactionForm.test.tsx
 │   │       │   │       ├──LandscapeTransactionList.test.tsx
 │   │       │   │       └──LandscapeUniqueTransactions.test.tsx
+│   │       │   │
 │   │       │   ├── Filter.test.tsx
 │   │       │   ├── Modal.test.tsx
 │   │       │   ├── TransactionCards.test.tsx
 │   │       │   ├── TransactionForm.test.tsx
 │   │       │   ├── TransactionList.test.tsx
 │   │       │   └── UniqueTransaction.test.tsx
+│   │       │ 
 │   │       ├── context/
 │   │       │   └── TransactionContext.test.tsx
+│   │       │
 │   │       ├── hooks/
 │   │       │   ├── useIsMobileDevice.test.ts
 │   │       │   └── useOrientation.test.ts
+│   │       │
 │   │       ├── model/
 │   │       │   ├── CategoryIcons.test.ts
 │   │       │   ├── PaginationDropdownOptions.test.ts
 │   │       │   └── TransactionOptions.test.ts
+│   │       │
 │   │       └── service/
 │   │           └── TransactionService.test.ts
 │   └── shared/
