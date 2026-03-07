@@ -59,7 +59,7 @@ export const createTransaction = async (
   }
 
   if (!result.data) {
-    throw new Error("Supabase não retornou a transação criada");
+    throw new Error("Erro ao retornar a transação criada");
   }
 
   const data = result.data;

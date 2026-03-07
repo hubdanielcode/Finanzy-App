@@ -1,6 +1,6 @@
 import { LuDot } from "react-icons/lu";
 
-const appVersion = "v1.2.7";
+const appVersion = "v1.2.8";
 
 interface FooterProps {
   isMobileFormOpen: boolean;
