@@ -111,6 +111,8 @@ Os testes utilizam `renderHook` para hooks, mocks do `recharts` e `vi.useFakeTim
 - React (Vite)
 - TypeScript
 - Tailwind CSS
+- Framer Motion
+- React Router DOM
 - Recharts
 - Supabase (Autenticação e Banco de Dados)
 - Vitest + React Testing Library
