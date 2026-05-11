@@ -10,14 +10,14 @@ export { UniqueTransaction } from "./components/UniqueTransaction";
 
 /* - Componentes: Charts - */
 
-export { BalanceLineChart } from "../transactions/components/charts/BalanceLineChart";
-export { CategoryPieChart } from "../transactions/components/charts/CategoryPieChart";
+export { BalanceLineChart } from "./components/charts/BalanceLineChart";
+export { CategoryPieChart } from "./components/charts/CategoryPieChart";
 export {
   MonthlyBarChartFilter,
   BalanceLineChartFilter,
-} from "../transactions/components/charts/ChartFilter";
-export { ChartsSection } from "../transactions/components/charts/ChartsSection";
-export { MonthlyBarChart } from "../transactions/components/charts/MonthlyBarChart";
+} from "./components/charts/ChartFilter";
+export { ChartsSection } from "./components/charts/ChartsSection";
+export { MonthlyBarChart } from "./components/charts/MonthlyBarChart";
 
 /* - Componentes: Mobile: Default - */
 
@@ -36,11 +36,11 @@ export { TransactionContext } from "./context/TransactionContext";
 
 /* - Hooks - */
 
-export { useBalanceChartData } from "../transactions/hooks/useBalanceChartData";
-export { useCategoryChartData } from "../transactions/hooks/useCategoryChartData";
-export { useClickOutside } from "../transactions/hooks/useClickOutside";
-export { useMobileContext } from "../transactions/hooks/useMobileContext";
-export { useTransactionContext } from "../transactions/hooks/useTransactionContext";
+export { useBalanceChartData } from "./hooks/useBalanceChartData";
+export { useCategoryChartData } from "./hooks/useCategoryChartData";
+export { useClickOutside } from "./hooks/useClickOutside";
+export { useMobileContext } from "./hooks/useMobileContext";
+export { useTransactionContext } from "./hooks/useTransactionContext";
 export { useYearlyChartData } from "./hooks/useYearlyChartData";
 
 /* - Models - */
@@ -55,7 +55,7 @@ export {
 export {
   transactionFormVariants,
   transactionListVariants,
-} from "../transactions/model/variants";
+} from "./model/variants";
 
 /* - Services - */
 
@@ -65,11 +65,11 @@ export {
   getTransactions,
   updateTransaction,
   deleteTransaction,
-} from "../transactions/services/transactionService";
+} from "./services/transactionService";
 
 /* - Utils - */
 
 export { formatCurrency } from "./utils/formatCurrency";
 export { formatPrivateCurrency } from "./utils/formatPrivateCurrency";
-export { MonthOptions } from "../transactions/utils/monthOptions";
-export { pageLimitOptions } from "../transactions/utils/paginationDropdownOptions";
+export { MonthOptions } from "./utils/monthOptions";
+export { pageLimitOptions } from "./utils/paginationDropdownOptions";
